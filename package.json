@@ -1,0 +1,24 @@
+{
+  "name": "urban-growth-labs-site",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Urban Growth Labs marketing site — React + Vite implementation of the brand design handoff.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "lenis": "^1.1.13",
+    "lucide-react": "^1.21.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.2",
+    "simple-icons": "^16.24.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "vite": "^5.4.8"
+  }
+}

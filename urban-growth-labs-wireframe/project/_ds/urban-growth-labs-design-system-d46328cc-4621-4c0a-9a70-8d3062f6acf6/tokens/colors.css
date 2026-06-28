@@ -1,0 +1,95 @@
+/* Urban Growth Labs — Color tokens
+   "Electric purples carry the brand, a high-voltage yellow accents key moments,
+    and deep near-black grounds it." Dark-first system. */
+
+:root {
+  /* ============ BRAND RAMP (raw palette) ============ */
+  --ugl-electric-purple: #6B00FF;  /* primary brand, CTAs, glow */
+  --ugl-vivid-violet:    #A259FF;  /* secondary, "LABS", data accent */
+  --ugl-soft-lilac:      #D6B3FF;  /* tints, muted text on dark, chart 3 */
+  --ugl-off-white:       #F2E9FF;  /* primary text on dark */
+  --ugl-signal-yellow:   #FFE600;  /* high-voltage accent, one moment per view */
+  --ugl-midnight-plum:   #1A1433;  /* card / elevated surface */
+  --ugl-deep-night:      #0A0714;  /* page ground */
+  --ugl-white:           #FFFFFF;
+
+  /* Purple ramp (derived, for fills / states / charts) */
+  --ugl-purple-50:  #F4ECFF;
+  --ugl-purple-100: #E6D4FF;
+  --ugl-purple-200: #D6B3FF;
+  --ugl-purple-300: #BB8CFF;
+  --ugl-purple-400: #A259FF;
+  --ugl-purple-500: #8A30FF;
+  --ugl-purple-600: #6B00FF;
+  --ugl-purple-700: #5400CC;
+  --ugl-purple-800: #3D0099;
+  --ugl-purple-900: #260060;
+
+  /* Night ramp (surfaces, from ground up) */
+  --ugl-night-0: #06030F;  /* deepest, vignette */
+  --ugl-night-1: #0A0714;  /* page bg (Deep Night) */
+  --ugl-night-2: #120C24;  /* raised panel */
+  --ugl-night-3: #1A1433;  /* card (Midnight Plum) */
+  --ugl-night-4: #241B45;  /* elevated / hover card */
+  --ugl-night-5: #322657;  /* border-strong / popover */
+
+  /* Status (kept in-family, yellow stays the signal) */
+  --ugl-success: #34E0A1;
+  --ugl-warning: #FFE600;
+  --ugl-danger:  #FF4D6D;
+  --ugl-info:    #A259FF;
+
+  /* ============ SEMANTIC ALIASES ============ */
+  /* Surfaces */
+  --surface-page:      var(--ugl-night-1);
+  --surface-sunken:    var(--ugl-night-0);
+  --surface-panel:     var(--ugl-night-2);
+  --surface-card:      var(--ugl-night-3);
+  --surface-raised:    var(--ugl-night-4);
+  --surface-popover:   var(--ugl-night-5);
+  --surface-inverse:   var(--ugl-off-white);
+
+  /* Text */
+  --text-strong:   var(--ugl-white);
+  --text-body:     var(--ugl-off-white);
+  --text-muted:    #B9A8E0;          /* lilac-grey for secondary copy */
+  --text-subtle:   #7C6BA8;          /* captions, meta */
+  --text-disabled: #574B78;
+  --text-accent:   var(--ugl-vivid-violet);
+  --text-signal:   var(--ugl-signal-yellow);
+  --text-on-brand: var(--ugl-white);
+  --text-on-signal:var(--ugl-deep-night);
+  --text-inverse:  var(--ugl-deep-night);
+
+  /* Brand intent */
+  --brand:         var(--ugl-electric-purple);
+  --brand-hover:   #7A1AFF;
+  --brand-active:  #5400CC;
+  --brand-soft:    rgba(107, 0, 255, 0.14);
+  --accent:        var(--ugl-vivid-violet);
+  --signal:        var(--ugl-signal-yellow);
+  --signal-hover:  #FFEE4D;
+  --signal-active: #E6CF00;
+
+  /* Borders / lines */
+  --border-subtle:  rgba(162, 89, 255, 0.14);
+  --border-default: rgba(162, 89, 255, 0.22);
+  --border-strong:  rgba(162, 89, 255, 0.38);
+  --border-signal:  var(--ugl-signal-yellow);
+  --border-focus:   var(--ugl-vivid-violet);
+
+  /* Fills for chips / faint backgrounds */
+  --fill-brand-soft:  rgba(107, 0, 255, 0.16);
+  --fill-violet-soft: rgba(162, 89, 255, 0.16);
+  --fill-signal-soft: rgba(255, 230, 0, 0.14);
+  --fill-hover:       rgba(255, 255, 255, 0.04);
+  --fill-active:      rgba(255, 255, 255, 0.08);
+
+  /* Data-viz sequence */
+  --chart-1: var(--ugl-electric-purple);
+  --chart-2: var(--ugl-vivid-violet);
+  --chart-3: var(--ugl-soft-lilac);
+  --chart-4: var(--ugl-signal-yellow);
+  --chart-5: #34E0A1;
+  --chart-6: #5B8DEF;
+}

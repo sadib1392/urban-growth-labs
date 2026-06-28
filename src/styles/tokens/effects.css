@@ -1,0 +1,46 @@
+/* Urban Growth Labs — Effects: shadows, neon glows, gradients, motion
+   The brand's signature is the neon glow (purple base, yellow signal) on a
+   deep-night ground. Shadows on dark are mostly *glows* + soft ambient depth. */
+
+:root {
+  /* Ambient depth (dark UI: subtle, low-spread) */
+  --shadow-xs: 0 1px 2px rgba(0,0,0,0.4);
+  --shadow-sm: 0 2px 6px rgba(0,0,0,0.45);
+  --shadow-md: 0 8px 24px rgba(0,0,0,0.5);
+  --shadow-lg: 0 18px 50px rgba(0,0,0,0.55);
+  --shadow-xl: 0 32px 80px rgba(0,0,0,0.6);
+
+  /* Neon glows — the brand motif */
+  --glow-purple-sm: 0 0 0 1px rgba(162,89,255,0.30), 0 0 16px rgba(107,0,255,0.35);
+  --glow-purple-md: 0 0 24px rgba(107,0,255,0.45), 0 0 64px rgba(107,0,255,0.22);
+  --glow-purple-lg: 0 0 40px rgba(107,0,255,0.55), 0 0 100px rgba(107,0,255,0.30);
+  --glow-violet:    0 0 24px rgba(162,89,255,0.50);
+  --glow-signal:    0 0 18px rgba(255,230,0,0.55), 0 0 44px rgba(255,230,0,0.28);
+
+  /* Focus ring */
+  --ring-focus: 0 0 0 3px rgba(162,89,255,0.45);
+  --ring-signal: 0 0 0 3px rgba(255,230,0,0.45);
+
+  /* Card recipe: dark surface, hairline violet border, ambient + faint inner top light */
+  --card-border: 1px solid var(--border-default);
+  --card-shadow: var(--shadow-md);
+  --card-shadow-hover: var(--shadow-lg), var(--glow-purple-sm);
+  --inner-top-light: inset 0 1px 0 rgba(255,255,255,0.05); /* @kind shadow */
+
+  /* Signature gradients */
+  --grad-brand: linear-gradient(135deg, #8A30FF 0%, #6B00FF 55%, #5400CC 100%); /* @kind color */
+  --grad-violet: linear-gradient(135deg, #B98CFF 0%, #A259FF 50%, #6B00FF 100%); /* @kind color */
+  --grad-night: radial-gradient(120% 120% at 50% 0%, #120C24 0%, #0A0714 55%, #06030F 100%); /* @kind color */
+  --grad-signal: linear-gradient(135deg, #FFEE4D 0%, #FFE600 60%, #E6CF00 100%); /* @kind color */
+  --grad-skyline-glow: radial-gradient(80% 60% at 50% 100%, rgba(107,0,255,0.35) 0%, rgba(107,0,255,0) 70%); /* @kind color */
+  /* faint dot/grid texture for backgrounds */
+  --grid-line: rgba(162,89,255,0.06);
+
+  /* Motion — quick, confident, no bounce on UI; ease-out is the house curve */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1); /* @kind other */
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1); /* @kind other */
+  --dur-fast: 120ms; /* @kind other */
+  --dur-base: 180ms; /* @kind other */
+  --dur-slow: 280ms; /* @kind other */
+  --transition-base: all var(--dur-base) var(--ease-out); /* @kind other */
+}

@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1515 360" width="1515" height="360">
+  <defs>
+    <linearGradient id="swooshp" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6B00FF"></stop>
+      <stop offset="0.55" stop-color="#A259FF"></stop>
+      <stop offset="1" stop-color="#D6B3FF"></stop>
+    </linearGradient>
+    <linearGradient id="barsp" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#D6B3FF"></stop>
+      <stop offset="0.14" stop-color="#A259FF"></stop>
+      <stop offset="1" stop-color="#6B00FF"></stop>
+    </linearGradient>
+    <linearGradient id="swfadep" x1="0.2" y1="0" x2="0.5" y2="1">
+      <stop offset="0" stop-color="#D6B3FF"></stop>
+      <stop offset="0.4" stop-color="#A259FF"></stop>
+      <stop offset="1" stop-color="#6B00FF" stop-opacity="0.25"></stop>
+    </linearGradient>
+    <radialGradient id="baseglowp" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6B00FF" stop-opacity="0.85"></stop>
+      <stop offset="1" stop-color="#6B00FF" stop-opacity="0"></stop>
+    </radialGradient>
+    <linearGradient id="glassp" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1A1433"></stop>
+      <stop offset="1" stop-color="#0A0714"></stop>
+    </linearGradient>
+    <linearGradient id="rimp" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"></stop>
+      <stop offset="1" stop-color="#F2E9FF"></stop>
+    </linearGradient>
+    <radialGradient id="bubblep" cx="0.35" cy="0.35" r="0.7">
+      <stop offset="0" stop-color="#D6B3FF"></stop>
+      <stop offset="1" stop-color="#A259FF"></stop>
+    </radialGradient>
+    <filter id="glowp" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="7" result="b"></feGaussianBlur>
+      <feFlood flood-color="#6B00FF" flood-opacity="0.55"></feFlood>
+      <feComposite in2="b" operator="in" result="g"></feComposite>
+      <feMerge><feMergeNode in="g"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge>
+    </filter>
+    <filter id="ylwp" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="3.5" result="b"></feGaussianBlur>
+      <feFlood flood-color="#FFE600" flood-opacity="0.65"></feFlood>
+      <feComposite in2="b" operator="in" result="g"></feComposite>
+      <feMerge><feMergeNode in="g"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge>
+    </filter>
+    <clipPath id="insidep">
+      <path d="M110,53 L110,91 L65,189 L175,189 L126,91 L126,53 Z"></path>
+    </clipPath>
+  </defs>
+  <g transform="translate(46,55)">
+    <path d="M92,64 A86,92 0 0 0 86,200" fill="none" stroke="url(#swfadep)" stroke-width="5.5" stroke-linecap="round"></path>
+    <ellipse cx="120" cy="196" rx="66" ry="20" fill="url(#baseglowp)"></ellipse>
+  <g filter="url(#glowp)">
+    <path d="M110,53 L110,91 L65,189 L175,189 L126,91 L126,53 Z" fill="url(#glassp)"></path>
+    <g clip-path="url(#insidep)"><rect x="76" y="158" width="11" height="30" fill="url(#barsp)"></rect><rect x="88" y="140" width="12" height="48" fill="url(#barsp)"></rect><rect x="92.0" y="134" width="4.1" height="6" fill="url(#barsp)"></rect><rect x="93.0" y="125" width="2" height="10" fill="url(#barsp)"></rect><rect x="101" y="110" width="13" height="78" fill="url(#barsp)"></rect><rect x="104.2" y="103" width="6.5" height="7" fill="url(#barsp)"></rect><rect x="115" y="102" width="12" height="86" fill="url(#barsp)"></rect><rect x="128" y="124" width="13" height="64" fill="url(#barsp)"></rect><rect x="141" y="146" width="12" height="42" fill="url(#barsp)"></rect><rect x="154" y="132" width="11" height="56" fill="url(#barsp)"></rect><rect x="156.8" y="125" width="5.5" height="7" fill="url(#barsp)"></rect></g>
+    <path d="M104,47 L104,89 L53,189 Q53,201 65,201 L175,201 Q187,201 187,189 L136,89 L136,47" fill="none" stroke="url(#rimp)" stroke-width="8.5" stroke-linejoin="round" stroke-linecap="round"></path>
+    <rect x="96" y="32" width="48" height="15" rx="6.5" fill="url(#rimp)"></rect>
+  </g>
+  <g>
+    <circle cx="116" cy="63" r="5" fill="url(#bubblep)"></circle>
+    <circle cx="121" cy="77" r="3.4" fill="#D6B3FF"></circle>
+    <circle cx="113" cy="51" r="2.8" fill="#A259FF"></circle>
+  </g>
+  <g filter="url(#ylwp)">
+    <path d="M80,166 L124,126 L170,84" fill="none" stroke="#FFE600" stroke-width="6.5" stroke-linejoin="round" stroke-linecap="round"></path>
+    <path d="M170,84 L152,90" stroke="#FFE600" stroke-width="6.5" stroke-linecap="round"></path>
+    <path d="M170,84 L166,104" stroke="#FFE600" stroke-width="6.5" stroke-linecap="round"></path>
+    <circle cx="80" cy="166" r="7.5" fill="#FFE600"></circle><circle cx="80" cy="166" r="3.6" fill="#0A0714"></circle><circle cx="124" cy="126" r="7.5" fill="#FFE600"></circle><circle cx="124" cy="126" r="3.6" fill="#0A0714"></circle>
+  </g>
+  </g>
+  <text x="360" y="192" font-family="Montserrat ExtraBold" font-size="90" letter-spacing="-1.5" fill="#F2E9FF">URBAN GROWTH<tspan fill="#A259FF" dx="20">LABS</tspan></text>
+  <line x1="360" y1="240" x2="435.3" y2="240" stroke="#FFE600" stroke-width="3"></line>
+  <text x="453.3" y="248" font-family="Montserrat SemiBold" font-size="25.5" letter-spacing="11.0" fill="#FFE600">DATA. STRATEGY. GROWTH. EXECUTION.</text>
+  <line x1="1379.7" y1="240" x2="1455.0" y2="240" stroke="#FFE600" stroke-width="3"></line>
+</svg>

@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/urban-growth-labs-design-system-d46328cc-4621-4c0a-9a70-8d3062f6acf6/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/urban-growth-labs-design-system-d46328cc-4621-4c0a-9a70-8d3062f6acf6/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/urban-growth-labs-design-system-d46328cc-4621-4c0a-9a70-8d3062f6acf6/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/urban-growth-labs-design-system-d46328cc-4621-4c0a-9a70-8d3062f6acf6/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/urban-growth-labs-design-system-d46328cc-4621-4c0a-9a70-8d3062f6acf6/tokens/effects.css">
+  <link rel="stylesheet" href="_ds/urban-growth-labs-design-system-d46328cc-4621-4c0a-9a70-8d3062f6acf6/tokens/base.css">
+  <link rel="stylesheet" href="_ds/urban-growth-labs-design-system-d46328cc-4621-4c0a-9a70-8d3062f6acf6/styles.css">
+  <script src="_ds/urban-growth-labs-design-system-d46328cc-4621-4c0a-9a70-8d3062f6acf6/_ds_bundle.js"></script>
+  <style>
+    html, body { margin:0; padding:0; background:var(--ugl-deep-night); }
+    *::-webkit-scrollbar { width:10px; height:10px; }
+    *::-webkit-scrollbar-thumb { background:var(--ugl-night-4); border-radius:99px; }
+    @keyframes uglpulse { 0%,100%{ filter:drop-shadow(0 0 14px rgba(123,27,255,0.4)); } 50%{ filter:drop-shadow(0 0 22px rgba(123,27,255,0.7)); } }
+  </style>
+</helmet>
+
+<div style="min-height:100vh; background:var(--grad-night); color:var(--text-body); font-family:'Inter',sans-serif; position:relative; overflow-x:hidden;">
+  <!-- skyline glow at bottom -->
+  <div style="position:fixed; left:0; right:0; bottom:0; height:340px; background:var(--grad-skyline-glow); pointer-events:none; z-index:0;"></div>
+
+  <!-- ============ HEADER ============ -->
+  <header style="position:sticky; top:0; z-index:100; backdrop-filter:blur(12px); background:rgba(10,7,20,0.72); border-bottom:1px solid var(--border-subtle);">
+    <div style="max-width:1140px; margin:0 auto; padding:13px 24px; display:flex; align-items:center; justify-content:space-between; gap:24px;">
+      <div onClick="{{ goHome }}" style="display:flex; align-items:center; gap:10px; cursor:pointer;">
+        <img src="assets/ugl-icon-mark.svg" alt="Urban Growth Labs" style="height:30px; width:auto;">
+        <span style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:16px; letter-spacing:-0.01em; color:var(--ugl-off-white);">URBAN GROWTH <span style="color:var(--ugl-vivid-violet);">LABS</span></span>
+      </div>
+      <nav style="display:flex; align-items:center; gap:26px; flex-wrap:wrap; justify-content:flex-end;">
+        <sc-for list="{{ nav }}" as="item" hint-placeholder-count="4">
+          <button onClick="{{ item.onClick }}" style="background:none; border:none; cursor:pointer; font-family:'Inter',sans-serif; font-size:15px; font-weight:500; color:{{ item.color }}; padding:4px 0; transition:color 180ms;">{{ item.label }}</button>
+        </sc-for>
+        <x-import component-from-global-scope="UrbanGrowthLabsDesignSystem_d46328.Button" variant="signal" size="md" on-click="{{ goContact }}" hint-size="auto,44px">Book a consult</x-import>
+      </nav>
+    </div>
+  </header>
+
+  <main style="position:relative; z-index:1;">
+
+  <!-- ============================== HOME ============================== -->
+  <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+  <div>
+    <!-- HERO · split (Variant A) -->
+    <sc-if value="{{ splitHero }}" hint-placeholder-val="{{ true }}">
+    <section style="max-width:1140px; margin:0 auto; padding:72px 24px 52px; display:grid; grid-template-columns:1.08fr 0.92fr; gap:52px; align-items:center;">
+      <div>
+        <div style="font-family:'Inter',sans-serif; font-size:12px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:var(--ugl-vivid-violet);">Data-driven marketing · NYC</div>
+        <h1 style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:58px; line-height:1.0; letter-spacing:-0.025em; color:var(--ugl-off-white); margin:16px 0 0;">We turn data into <span style="color:var(--ugl-vivid-violet);">real growth.</span></h1>
+        <p style="font-size:17px; line-height:1.6; color:var(--text-muted); margin:20px 0 0; max-width:440px;">Research-led marketing systems that move local NYC businesses from discovery to conversion — affordably.</p>
+        <div style="display:flex; gap:12px; margin-top:30px; flex-wrap:wrap;">
+          <x-import component-from-global-scope="UrbanGrowthLabsDesignSystem_d46328.Button" variant="signal" size="lg" on-click="{{ goContact }}" hint-size="auto,54px">Book a free consult</x-import>
+          <x-import component-from-global-scope="UrbanGrowthLabsDesignSystem_d46328.Button" variant="secondary" size="lg" on-click="{{ goWork }}" hint-size="auto,54px">See our work →</x-import>
+        </div>
+        <div style="font-family:'Inter',sans-serif; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:var(--text-subtle); margin-top:26px;">Data. Strategy. Growth. Execution.</div>
+      </div>
+      <!-- hero dashboard card -->
+      <x-import component-from-global-scope="UrbanGrowthLabsDesignSystem_d46328.Card" variant="glow" padding="lg" hint-size="100%,300px">
+        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:18px;">
+          <span style="font-family:'Inter',sans-serif; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-subtle);">Live growth</span>
+          <span style="display:inline-flex; align-items:center; gap:6px; font-size:11px; font-weight:700; color:var(--ugl-success);"><span style="width:7px; height:7px; border-radius:99px; background:var(--ugl-success); box-shadow:0 0 8px var(--ugl-success);"></span>tracking</span>
+        </div>
+        <x-import component-from-global-scope="UrbanGrowthLabsDesignSystem_d46328.Stat" value="34.2K" label="Total conversions" delta="+28.6%" caption="vs last 30 days" size="lg" hint-size="auto,90px"></x-import>
+        <div style="display:flex; align-items:flex-end; gap:7px; height:74px; margin:22px 0 18px;">
+          <div style="flex:1; height:34%; background:var(--ugl-purple-700); border-radius:3px;"></div>
+          <div style="flex:1; height:52%; background:var(--ugl-purple-600); border-radius:3px;"></div>
+          <div style="flex:1; height:44%; background:var(--ugl-purple-500); border-radius:3px;"></div>
+          <div style="flex:1; height:70%; background:var(--ugl-purple-400); border-radius:3px;"></div>
+          <div style="flex:1; height:86%; background:var(--ugl-vivid-violet); border-radius:3px;"></div>
+          <div style="flex:1; height:100%; background:var(--ugl-vivid-violet); border-radius:3px; box-shadow:0 0 16px rgba(162,89,255,0.6);"></div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          <x-import component-from-global-scope="UrbanGrowthLabsDesignSystem_d46328.Meter" label="Paid social" value="46" accent="brand" hint-size="100%,40px"></x-import>
+          <x-import component-from-global-scope="UrbanGrowthLabsDesignSystem_d46328.Meter" label="Organic + local SEO" value="72" accent="violet" hint-size="100%,40px"></x-import>
+        </div>
+      </x-import>
+    </section>
+    </sc-if>
+
+    <!-- HERO · editorial (Variant C) -->
+    <sc-if value="{{ editorialHero }}" hint-placeholder-val="{{ false }}">
+    <section style="max-width:1140px; margin:0 auto; padding:96px 24px 64px;">
+      <div style="font-family:'Inter',sans-serif; font-size:12px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:var(--ugl-vivid-violet); margin-bottom:22px;">A data-driven NYC marketing agency</div>
+      <h1 style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:92px; line-height:0.96; letter-spacing:-0.035em; color:var(--ugl-off-white); margin:0;">We turn data<br>into <span style="color:var(--ugl-vivid-violet);">real growth.</span></h1>
+      <div style="display:flex; align-items:center; gap:18px; margin-top:36px; flex-wrap:wrap;">
+        <x-import component-from-global-scope="UrbanGrowthLabsDesignSystem_d46328.Button" variant="signal" size="lg" on-click="{{ goContact }}" hint-size="auto,54px">Book a free consult</x-import>
+        <x-import component-from-global-scope="UrbanGrowthLabsDesignSystem_d46328.Button" variant="ghost" size="lg" on-click="{{ goWork }}" hint-size="auto,54px">→ See the work</x-import>
+      </div>
+      <div style="height:1px; background:var(--border-subtle); margin-top:44px;"></div>
+      <div style="font-family:'Inter',sans-serif; font-size:13px; letter-spacing:0.18em; text-transform:uppercase; color:var(--text-subtle); margin-top:18px;">Data. Strategy. Growth. Execution.</div>
+    </section>
+    </sc-if>
+
+    <!-- STAT TRUST BAND -->
+    <section style="max-width:1140px; margin:0 auto; padding:0 24px 64px;">
+      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:0; border:1px solid var(--border-default); border-radius:var(--radius-lg); overflow:hidden; background:var(--surface-panel);">
+        <div style="padding:28px 24px; border-right:1px solid var(--border-subtle);"><x-import component-from-global-scope="UrbanGrowthLabsDesignSystem_d46328.Stat" value="34.2K" label="Conversions driven" delta="+28.6%" size="md" hint-size="auto,80px"></x-import></div>
+        <div style="padding:28px 24px; border-right:1px solid var(--border-subtle);"><x-import component-from-global-scope="UrbanGrowthLabsDesignSystem_d46328.Stat" value="$23.41" label="Avg. cost per lead" delta="-12.4%" size="md" hint-size="auto,80px"></x-import></div>
+        <div style="padding:28px 24px; border-right:1px solid var(--border-subtle);"><x-import component-from-global-scope="UrbanGrowthLabsDesignSystem_d46328.Stat" value="+18.7%" label="Avg. lift in CTR" delta="+18.7%" size="md" hint-size="auto,80px"></x-import></div>
+        <div style="padding:28px 24px;"><x-import component-from-global-scope="UrbanGrowthLabsDesignSystem_d46328.Stat" value="5 boroughs" label="Local operators served" size="md" hint-size="auto,80px"></x-import></div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section style="max-width:1140px; margin:0 auto; padding:24px 24px 72px;">
+      <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:24px; margin-bottom:32px; flex-wrap:wrap;">
+        <div>
+          <div style="font-family:'Inter',sans-serif; font-size:12px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:var(--ugl-vivid-violet); margin-bottom:10px;">What we do</div>
+          <h2 style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:38px; letter-spacing:-0.02em; color:var(--ugl-off-white); margin:0;">A few things, done exceptionally.</h2>
+          <p style="font-size:15px; color:var(--text-muted); margin:10px 0 0;">Not a long menu done averagely.</p>
+        </div>
+        <x-import component-from-global-scope="UrbanGrowthLabsDesignSystem_d46328.Button" variant="ghost" size="md" on-click="{{ goServices }}" hint-size="auto,44px">All services →</x-import>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:20px;">
+        <sc-for list="{{ services }}" as="s" hint-placeholder-count="3">
+          <x-import component-from-global-scope="UrbanGrowthLabsDesignSystem_d46328.Card" padding="lg" interactive="{{ true }}" glow-on-hover="{{ true }}" hint-size="100%,210px">
+            <div style="width:42px; height:42px; border-radius:11px; background:var(--fill-violet-soft); border:1px solid var(--border-strong); margin-bottom:18px;"></div>
+            <h3 style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:20px; color:var(--ugl-off-white); margin:0 0 10px;">{{ s.name }}</h3>
+            <p style="font-size:14px; line-height:1.55; color:var(--text-muted); margin:0;">{{ s.desc }}</p>
+          </x-import>
+        </sc-for>
+      </div>
+    </section>
+
+    <!-- A-TO-Z PIPELINE (Variant B) -->
+    <section style="background:var(--surface-sunken); border-top:1px solid var(--border-subtle); border-bottom:1px solid var(--border-subtle);">
+      <div style="max-width:1140px; margin:0 auto; padding:72px 24px;">
+        <div style="text-align:center; margin-bottom:44px;">
+          <div style="font-family:'Inter',sans-serif; font-size:12px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:var(--ugl-vivid-violet); margin-bottom:10px;">The A-to-Z pipeline</div>
+          <h2 style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:38px; letter-spacing:-0.02em; color:var(--ugl-off-white); margin:0;">Every engagement is built as a system.</h2>
+          <p style="font-size:15px; color:var(--text-muted); margin:12px 0 0;">Plan. Test. Optimize. Scale.</p>
+        </div>
+        <div style="position:relative; display:grid; grid-template-columns:repeat(4,1fr); gap:20px;">
+          <div style="position:absolute; top:30px; left:12%; right:12%; height:2px; background:linear-gradient(90deg,var(--ugl-purple-700),var(--ugl-vivid-violet),var(--ugl-signal-yellow));"></div>
+          <sc-for list="{{ methodSteps }}" as="m" hint-placeholder-count="4">
+            <div style="position:relative; text-align:center;">
+              <div style="width:60px; height:60px; border-radius:99px; background:var(--surface-card); border:2px solid {{ m.c }}; display:flex; align-items:center; justify-content:center; margin:0 auto 18px; font-family:'Montserrat',sans-serif; font-weight:800; font-size:20px; color:var(--ugl-off-white);">{{ m.n }}</div>
+              <h3 style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:18px; color:var(--ugl-off-white); margin:0 0 8px;">{{ m.k }}</h3>
+              <p style="font-size:13px; line-height:1.5; color:var(--text-muted); margin:0; padding:0 8px;">{{ m.d }}</p>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED WORK -->
+    <section style="max-width:1140px; margin:0 auto; padding:72px 24px;">
+      <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:24px; margin-bottom:32px; flex-wrap:wrap;">
+        <div>
+          <div style="font-family:'Inter',sans-serif; font-size:12px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:var(--ugl-vivid-violet); margin-bottom:10px;">Proof, not promises</div>
+          <h2 style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:38px; letter-spacing:-0.02em; color:var(--ugl-off-white); margin:0;">Real results, real businesses.</h2>
+        </div>
+        <x-import component-from-global-scope="UrbanGrowthLabsDesignSystem_d46328.Button" variant="ghost" size="md" on-click="{{ goWork }}" hint-size="auto,44px">View all work →</x-import>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:20px;">
+        <sc-for list="{{ homeCases }}" as="c" hint-placeholder-count="3">
+          <x-import component-from-global-scope="UrbanGrowthLabsDesignSystem_d46328.Card" padding="none" interactive="{{ true }}" glow-on-hover="{{ true }}" on-click="{{ goWork }}" hint-size="100%,260px">
+            <div style="height:124px; border-radius:var(--radius-lg) var(--radius-lg) 0 0; background:radial-gradient(80% 130% at 70% 0%, rgba(162,89,255,0.22), transparent 55%), repeating-linear-gradient(45deg,rgba(162,89,255,0.06) 0 10px,transparent 10px 20px); border-bottom:1px solid var(--border-subtle); display:flex; align-items:flex-start; padding:14px;">
+              <x-import component-from-global-scope="UrbanGrowthLabsDesignSystem_d46328.Badge" variant="soft" size="sm" hint-size="auto,24px">{{ c.tag }}</x-import>
+            </div>
+            <div style="padding:20px;">
+              <h3 style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:17px; color:var(--ugl-off-white); margin:0 0 4px;">{{ c.name }}</h3>
+              <p style="font-size:12px; color:var(--text-subtle); margin:0 0 16px;">{{ c.svc }}</p>
+              <x-import component-from-global-scope="UrbanGrowthLabsDesignSystem_d46328.Stat" value="{{ c.result }}" caption="{{ c.metric }}" size="md" accent="violet" hint-size="auto,70px"></x-import>
+            </div>
+          </x-import>
+        </sc-for>
+      </div>
+    </section>
+
+    <!-- PRICING TEASER -->
+    <section style="background:var(--surface-sunken); border-top:1px solid var(--border-subtle); border-bottom:1px solid var(--border-subtle);">
+      <div style="max-width:1140px; margin:0 auto; padding:72px 24px; text-align:center;">
+        <div style="font-family:'Inter',sans-serif; font-size:12px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:var(--ugl-vivid-violet); margin-bottom:10px;">Pricing</div>
+        <h2 style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:38px; letter-spacing:-0.02em; color:var(--ugl-off-white); margin:0 0 8px;">Built for SMBs. Accessible by design.</h2>
+        <p style="font-size:15px; color:var(--text-muted); margin:0 0 36px;">A community rate keeps pro marketing within reach for underserved neighborhoods.</p>
+        <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:20px; text-align:left;">
+          <x-import component-from-global-scope="UrbanGrowthLabsDesignSystem_d46328.Card" padding="lg" hint-size="100%,150px"><div style="font-family:'Inter',sans-serif; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-muted);">Starter</div><div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:30px; color:var(--ugl-off-white); margin:10px 0 6px;">$750</div><div style="font-size:13px; color:var(--text-subtle);">Entry package for small local businesses</div></x-import>
+          <x-import component-from-global-scope="UrbanGrowthLabsDesignSystem_d46328.Card" variant="glow" padding="lg" hint-size="100%,150px"><div style="font-family:'Inter',sans-serif; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:var(--ugl-vivid-violet);">Growth · popular</div><div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:30px; color:var(--ugl-off-white); margin:10px 0 6px;">$1,800<span style="font-size:14px; color:var(--text-subtle); font-weight:500;">/mo</span></div><div style="font-size:13px; color:var(--text-subtle);">Core pipeline across social + web + design</div></x-import>
+          <x-import component-from-global-scope="UrbanGrowthLabsDesignSystem_d46328.Card" padding="lg" hint-size="100%,150px"><div style="font-family:'Inter',sans-serif; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-muted);">Scale</div><div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:30px; color:var(--ugl-off-white); margin:10px 0 6px;">$3,500<span style="font-size:14px; color:var(--text-subtle); font-weight:500;">/mo</span></div><div style="font-size:13px; color:var(--text-subtle);">Full pipeline with automation &amp; analytics</div></x-import>
+        </div>
+        <div style="margin-top:32px;"><x-import component-from-global-scope="UrbanGrowthLabsDesignSystem_d46328.Button" variant="secondary" size="lg" on-click="{{ goPricing }}" hint-size="auto,54px">See full pricing →</x-import></div>
+      </div>
+    </section>
+
+    <!-- CLOSING CTA (Variant C) -->
+    <section style="max-width:1140px; margin:0 auto; padding:96px 24px; text-align:center;">
+      <h2 style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:62px; line-height:1.0; letter-spacing:-0.03em; color:var(--ugl-off-white); margin:0;">Growth isn't luck.<br>It's <span style="color:var(--ugl-vivid-violet);">a system.</span></h2>
+      <p style="font-size:17px; color:var(--text-muted); margin:22px 0 32px;">Book a free 30-minute consultation. No pressure, just a plan.</p>
+      <x-import component-from-global-scope="UrbanGrowthLabsDesignSystem_d46328.Button" variant="signal" size="lg" on-click="{{ goContact }}" hint-size="auto,54px">Book a free consult</x-import>
+    </section>
+  </div>
+  </sc-if>
+
+  <!-- ============================== SERVICES ============================== -->
+  <sc-if value="{{ isServices }}" hint-placeholder-val="{{ false }}">
+  <div>
+    <section style="max-width:1140px; margin:0 auto; padding:72px 24px 40px;">
+      <div style="font-family:'Inter',sans-serif; font-size:12px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:var(--ugl-vivid-violet); margin-bottom:14px;">Services</div>
+      <h1 style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:52px; line-height:1.02; letter-spacing:-0.025em; color:var(--ugl-off-white); margin:0; max-width:760px;">A few services, done exceptionally.</h1>
+      <p style="font-size:17px; line-height:1.6; color:var(--text-muted); margin:20px 0 0; max-width:560px;">Three core lines, assembled into one end-to-end pipeline around your highest-converting channels — supported by data, automation, and research.</p>
+    </section>
+    <section style="max-width:1140px; margin:0 auto; padding:0 24px 24px; display:flex; flex-direction:column; gap:20px;">
+      <sc-for list="{{ services }}" as="s" hint-placeholder-count="3">
+        <x-import component-from-global-scope="UrbanGrowthLabsDesignSystem_d46328.Card" padding="lg" interactive="{{ true }}" glow-on-hover="{{ true }}" hint-size="100%,140px">
+          <div style="display:flex; gap:28px; align-items:center;">
+            <div style="flex:0 0 120px; height:120px; border-radius:var(--radius-md); background:repeating-linear-gradient(45deg,rgba(162,89,255,0.07) 0 10px,transparent 10px 20px); border:1px solid var(--border-strong);"></div>
+            <div style="flex:1;">
+              <h3 style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:26px; color:var(--ugl-off-white); margin:0 0 10px;">{{ s.name }}</h3>
+              <p style="font-size:15px; line-height:1.6; color:var(--text-muted); margin:0; max-width:620px;">{{ s.desc }}</p>
+            </div>
+          </div>
+        </x-import>
+      </sc-for>
+    </section>
+    <section style="max-width:1140px; margin:0 auto; padding:24px 24px 48px;">
+      <div style="font-family:'Inter',sans-serif; font-size:12px; letter-spacing:0.16em; text-transform:uppercase; color:var(--text-subtle); margin-bottom:16px;">Supported by</div>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <sc-for list="{{ support }}" as="cap" hint-placeholder-count="3">
+          <x-import component-from-global-scope="UrbanGrowthLabsDesignSystem_d46328.Badge" variant="outline" size="md" hint-size="auto,28px">{{ cap }}</x-import>
+        </sc-for>
+      </div>
+    </section>
+    <section style="background:var(--surface-sunken); border-top:1px solid var(--border-subtle);">
+      <div style="max-width:1140px; margin:0 auto; padding:64px 24px; text-align:center;">
+        <h2 style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:34px; letter-spacing:-0.02em; color:var(--ugl-off-white); margin:0 0 22px;">Not sure where to start?</h2>
+        <x-import component-from-global-scope="UrbanGrowthLabsDesignSystem_d46328.Button" variant="signal" size="lg" on-click="{{ goContact }}" hint-size="auto,54px">Book a free consult</x-import>
+      </div>
+    </section>
+  </div>
+  </sc-if>
+
+  <!-- ============================== WORK ============================== -->
+  <sc-if value="{{ isWork }}" hint-placeholder-val="{{ false }}">
+  <div>
+    <section style="max-width:1140px; margin:0 auto; padding:72px 24px 32px;">
+      <div style="font-family:'Inter',sans-serif; font-size:12px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:var(--ugl-vivid-violet); margin-bottom:14px;">Work</div>
+      <h1 style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:52px; line-height:1.02; letter-spacing:-0.025em; color:var(--ugl-off-white); margin:0;">Real results, real businesses.</h1>
+      <p style="font-size:17px; color:var(--text-muted); margin:18px 0 0; max-width:560px;">Every figure pairs with a delta and a timeframe. Filter by the kind of business you run.</p>
+    </section>
+    <!-- featured -->
+    <section style="max-width:1140px; margin:0 auto; padding:8px 24px 8px;">
+      <x-import component-from-global-scope="UrbanGrowthLabsDesignSystem_d46328.Card" variant="glow" padding="none" hint-size="100%,260px">
+        <div style="display:grid; grid-template-columns:1.2fr 1fr;">
+          <div style="min-height:240px; border-radius:var(--radius-lg) 0 0 var(--radius-lg); background:radial-gradient(70% 120% at 60% 10%, rgba(162,89,255,0.28), transparent 55%), repeating-linear-gradient(45deg,rgba(162,89,255,0.06) 0 12px,transparent 12px 24px); display:flex; align-items:flex-start; padding:18px;"><x-import component-from-global-scope="UrbanGrowthLabsDesignSystem_d46328.Badge" variant="signal" size="sm" hint-size="auto,24px">Featured</x-import></div>
+          <div style="padding:32px; display:flex; flex-direction:column; justify-content:center;">
+            <div style="font-size:12px; color:var(--text-subtle); letter-spacing:0.12em; text-transform:uppercase; margin-bottom:8px;">{{ featured.tag }} · {{ featured.svc }}</div>
+            <h2 style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:30px; color:var(--ugl-off-white); margin:0 0 18px;">{{ featured.name }}</h2>
+            <x-import component-from-global-scope="UrbanGrowthLabsDesignSystem_d46328.Stat" value="{{ featured.result }}" label="Headline result" caption="{{ featured.metric }}" size="lg" hint-size="auto,90px"></x-import>
+          </div>
+        </div>
+      </x-import>
+    </section>
+    <!-- filters -->
+    <section style="max-width:1140px; margin:0 auto; padding:32px 24px 0;">
+      <x-import component-from-global-scope="UrbanGrowthLabsDesignSystem_d46328.Tabs" tabs="{{ workTabs }}" value="{{ workFilter }}" on-change="{{ setWorkFilter }}" hint-size="100%,48px"></x-import>
+    </section>
+    <!-- grid -->
+    <section style="max-width:1140px; margin:0 auto; padding:28px 24px 64px;">
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:20px;">
+        <sc-for list="{{ filteredCases }}" as="c" hint-placeholder-count="6">
+          <x-import component-from-global-scope="UrbanGrowthLabsDesignSystem_d46328.Card" padding="none" interactive="{{ true }}" glow-on-hover="{{ true }}" hint-size="100%,250px">
+            <div style="height:120px; border-radius:var(--radius-lg) var(--radius-lg) 0 0; background:radial-gradient(80% 130% at 70% 0%, rgba(162,89,255,0.2), transparent 55%), repeating-linear-gradient(45deg,rgba(162,89,255,0.06) 0 10px,transparent 10px 20px); border-bottom:1px solid var(--border-subtle); display:flex; align-items:flex-start; padding:14px;"><x-import component-from-global-scope="UrbanGrowthLabsDesignSystem_d46328.Badge" variant="soft" size="sm" hint-size="auto,24px">{{ c.tag }}</x-import></div>
+            <div style="padding:20px;">
+              <h3 style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:17px; color:var(--ugl-off-white); margin:0 0 4px;">{{ c.name }}</h3>
+              <p style="font-size:12px; color:var(--text-subtle); margin:0 0 16px;">{{ c.svc }}</p>
+              <x-import component-from-global-scope="UrbanGrowthLabsDesignSystem_d46328.Stat" value="{{ c.result }}" caption="{{ c.metric }}" size="md" hint-size="auto,70px"></x-import>
+            </div>
+          </x-import>
+        </sc-for>
+      </div>
+    </section>
+  </div>
+  </sc-if>
+
+  <!-- ============================== PRICING ============================== -->
+  <sc-if value="{{ isPricing }}" hint-placeholder-val="{{ false }}">
+  <div>
+    <section style="max-width:1140px; margin:0 auto; padding:72px 24px 24px; text-align:center;">
+      <div style="font-family:'Inter',sans-serif; font-size:12px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:var(--ugl-vivid-violet); margin-bottom:14px;">Pricing</div>
+      <h1 style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:52px; line-height:1.02; letter-spacing:-0.025em; color:var(--ugl-off-white); margin:0;">Accessible by design.</h1>
+      <p style="font-size:16px; color:var(--text-muted); margin:18px 0 0;">Sample pricing · project work, monthly retainers, and tiered packages.</p>
+      <div style="display:inline-flex; align-items:center; gap:14px; margin-top:26px; background:var(--surface-card); border:1px solid var(--border-default); border-radius:var(--radius-pill); padding:10px 18px;">
+        <span style="font-size:13px; color:var(--text-muted);">Standard</span>
+        <x-import component-from-global-scope="UrbanGrowthLabsDesignSystem_d46328.Switch" checked="{{ community }}" on-change="{{ toggleCommunity }}" accent="signal" hint-size="auto,26px"></x-import>
+        <span style="font-size:13px; font-weight:700; color:var(--ugl-signal-yellow);">Community rate</span>
+      </div>
+    </section>
+    <section style="max-width:1140px; margin:0 auto; padding:32px 24px 24px;">
+      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:18px;">
+        <sc-for list="{{ tiers }}" as="t" hint-placeholder-count="4">
+          <x-import component-from-global-scope="UrbanGrowthLabsDesignSystem_d46328.Card" variant="default" padding="lg" interactive="{{ true }}" glow-on-hover="{{ true }}" hint-size="100%,360px">
+            <div style="display:flex; align-items:center; justify-content:space-between; min-height:24px;">
+              <span style="font-family:'Inter',sans-serif; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-muted);">{{ t.name }}</span>
+              <sc-if value="{{ t.featured }}" hint-placeholder-val="{{ false }}"><x-import component-from-global-scope="UrbanGrowthLabsDesignSystem_d46328.Badge" variant="brand" size="sm" hint-size="auto,24px">Popular</x-import></sc-if>
+            </div>
+            <div style="display:flex; align-items:baseline; gap:4px; margin:16px 0 4px;">
+              <span style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:32px; color:var(--ugl-off-white);">{{ t.price }}</span>
+              <span style="font-size:13px; color:var(--text-subtle); font-weight:500;">{{ t.unit }}</span>
+            </div>
+            <p style="font-size:13px; line-height:1.5; color:var(--text-muted); margin:0 0 18px; min-height:54px;">{{ t.tagline }}</p>
+            <div style="display:flex; flex-direction:column; gap:9px; margin-bottom:22px;">
+              <sc-for list="{{ t.features }}" as="ft" hint-placeholder-count="3">
+                <div style="display:flex; gap:9px; align-items:flex-start; font-size:13px; color:var(--text-body);"><span style="color:var(--ugl-vivid-violet); font-weight:700;">✓</span>{{ ft }}</div>
+              </sc-for>
+            </div>
+            <x-import component-from-global-scope="UrbanGrowthLabsDesignSystem_d46328.Button" variant="secondary" size="md" full-width="{{ true }}" on-click="{{ goContact }}" hint-size="100%,44px">Get started</x-import>
+          </x-import>
+        </sc-for>
+      </div>
+      <sc-if value="{{ community }}" hint-placeholder-val="{{ false }}">
+        <div style="margin-top:20px; background:rgba(255,230,0,0.08); border:1px solid rgba(255,230,0,0.35); border-radius:var(--radius-md); padding:16px 20px; display:flex; gap:12px; align-items:center;"><span style="color:var(--ugl-signal-yellow); font-family:'Montserrat'; font-weight:800; font-size:18px;">★</span><span style="font-size:14px; color:var(--text-body);">Community rate applied — sliding-scale pricing for qualifying businesses in underserved neighborhoods.</span></div>
+      </sc-if>
+    </section>
+    <!-- comparison -->
+    <section style="max-width:1140px; margin:0 auto; padding:48px 24px 64px;">
+      <h2 style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:28px; letter-spacing:-0.02em; color:var(--ugl-off-white); margin:0 0 22px;">Compare packages</h2>
+      <div style="border:1px solid var(--border-default); border-radius:var(--radius-lg); overflow:hidden;">
+        <div style="display:grid; grid-template-columns:2fr 1fr 1fr 1fr; background:var(--surface-panel); font-family:'Inter',sans-serif; font-size:12px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--text-muted);">
+          <div style="padding:14px 18px;">Feature</div><div style="padding:14px; text-align:center;">Starter</div><div style="padding:14px; text-align:center; color:var(--ugl-vivid-violet);">Growth</div><div style="padding:14px; text-align:center;">Scale</div>
+        </div>
+        <sc-for list="{{ compareRows }}" as="r" hint-placeholder-count="5">
+          <div style="display:grid; grid-template-columns:2fr 1fr 1fr 1fr; border-top:1px solid var(--border-subtle); font-size:14px;">
+            <div style="padding:14px 18px; color:var(--text-muted);">{{ r.f }}</div>
+            <div style="padding:14px; text-align:center; color:var(--ugl-vivid-violet);">{{ r.sMark }}</div>
+            <div style="padding:14px; text-align:center; color:var(--ugl-vivid-violet);">{{ r.gMark }}</div>
+            <div style="padding:14px; text-align:center; color:var(--ugl-vivid-violet);">{{ r.xMark }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+  </div>
+  </sc-if>
+
+  <!-- ============================== ABOUT ============================== -->
+  <sc-if value="{{ isAbout }}" hint-placeholder-val="{{ false }}">
+  <div>
+    <section style="max-width:1140px; margin:0 auto; padding:72px 24px 40px;">
+      <div style="font-family:'Inter',sans-serif; font-size:12px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:var(--ugl-vivid-violet); margin-bottom:14px;">About</div>
+      <h1 style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:52px; line-height:1.02; letter-spacing:-0.025em; color:var(--ugl-off-white); margin:0; max-width:820px;">Built for the city. Engineered for growth.</h1>
+      <p style="font-size:17px; line-height:1.6; color:var(--text-muted); margin:22px 0 0; max-width:620px;">We help New York City's local businesses grow through tailored, data-driven marketing — and make that growth genuinely accessible to underserved communities.</p>
+    </section>
+    <section style="max-width:1140px; margin:0 auto; padding:8px 24px 16px;">
+      <div style="font-family:'Inter',sans-serif; font-size:12px; letter-spacing:0.16em; text-transform:uppercase; color:var(--text-subtle); margin-bottom:18px;">Our values</div>
+      <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:14px;">
+        <sc-for list="{{ values }}" as="v" hint-placeholder-count="5">
+          <x-import component-from-global-scope="UrbanGrowthLabsDesignSystem_d46328.Card" padding="md" hint-size="100%,120px">
+            <h3 style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:16px; color:var(--ugl-vivid-violet); margin:0 0 8px;">{{ v.k }}</h3>
+            <p style="font-size:13px; line-height:1.45; color:var(--text-muted); margin:0;">{{ v.d }}</p>
+          </x-import>
+        </sc-for>
+      </div>
+    </section>
+    <section style="max-width:1140px; margin:0 auto; padding:40px 24px 16px;">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+        <x-import component-from-global-scope="UrbanGrowthLabsDesignSystem_d46328.Card" padding="lg" hint-size="100%,200px">
+          <div style="width:60px; height:60px; border-radius:99px; background:var(--fill-violet-soft); border:1px solid var(--border-strong); margin-bottom:18px;"></div>
+          <h3 style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:22px; color:var(--ugl-off-white); margin:0 0 10px;">The founder</h3>
+          <p style="font-size:14px; line-height:1.6; color:var(--text-muted); margin:0;">5–7+ years of digital marketing experience, with proven engagement growth across social, website, and email for two brands. Mission-driven and NYC-rooted.</p>
+        </x-import>
+        <div style="border-radius:var(--radius-lg); border:1px solid var(--border-strong); background:radial-gradient(70% 90% at 60% 20%, rgba(162,89,255,0.2), transparent 55%), repeating-linear-gradient(45deg,rgba(162,89,255,0.06) 0 12px,transparent 12px 24px); min-height:200px; display:flex; align-items:flex-end; padding:20px; font-size:12px; color:var(--text-subtle); letter-spacing:0.06em;">NYC neighborhoods we serve</div>
+      </div>
+    </section>
+    <section style="background:var(--surface-sunken); border-top:1px solid var(--border-subtle); margin-top:48px;">
+      <div style="max-width:1140px; margin:0 auto; padding:64px 24px; text-align:center;">
+        <h2 style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:34px; letter-spacing:-0.02em; color:var(--ugl-off-white); margin:0 0 22px;">Let's build your growth system.</h2>
+        <x-import component-from-global-scope="UrbanGrowthLabsDesignSystem_d46328.Button" variant="signal" size="lg" on-click="{{ goContact }}" hint-size="auto,54px">Book a free consult</x-import>
+      </div>
+    </section>
+  </div>
+  </sc-if>
+
+  <!-- ============================== CONTACT ============================== -->
+  <sc-if value="{{ isContact }}" hint-placeholder-val="{{ false }}">
+  <div>
+    <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
+    <section style="max-width:680px; margin:0 auto; padding:96px 24px; text-align:center;">
+      <div style="width:72px; height:72px; border-radius:99px; background:var(--fill-signal-soft); border:1px solid var(--border-signal); display:flex; align-items:center; justify-content:center; margin:0 auto 24px; font-size:32px; color:var(--ugl-signal-yellow);">✓</div>
+      <h1 style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:40px; letter-spacing:-0.02em; color:var(--ugl-off-white); margin:0 0 14px;">Request received.</h1>
+      <p style="font-size:16px; line-height:1.6; color:var(--text-muted); margin:0 0 30px;">Thanks — we'll be in touch within one business day to schedule your free 30-minute consultation. Insights today. Growth tomorrow.</p>
+      <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+        <x-import component-from-global-scope="UrbanGrowthLabsDesignSystem_d46328.Button" variant="secondary" size="md" on-click="{{ goHome }}" hint-size="auto,44px">Back to home</x-import>
+        <x-import component-from-global-scope="UrbanGrowthLabsDesignSystem_d46328.Button" variant="ghost" size="md" on-click="{{ resetForm }}" hint-size="auto,44px">Submit another</x-import>
+      </div>
+    </section>
+    </sc-if>
+    <sc-if value="{{ notSubmitted }}" hint-placeholder-val="{{ true }}">
+    <section style="max-width:1140px; margin:0 auto; padding:72px 24px 80px; display:grid; grid-template-columns:1.25fr 0.9fr; gap:56px; align-items:start;">
+      <div>
+        <div style="font-family:'Inter',sans-serif; font-size:12px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:var(--ugl-vivid-violet); margin-bottom:14px;">Contact</div>
+        <h1 style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:48px; line-height:1.02; letter-spacing:-0.025em; color:var(--ugl-off-white); margin:0;">Book a free consult.</h1>
+        <p style="font-size:16px; color:var(--text-muted); margin:16px 0 32px; max-width:440px;">A free 30-minute call. Tell us about your business — we'll bring a plan. No pressure.</p>
+        <div style="display:flex; flex-direction:column; gap:18px; max-width:520px;">
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+            <x-import component-from-global-scope="UrbanGrowthLabsDesignSystem_d46328.Input" label="Your name" placeholder="Jordan Rivera" value="{{ form.name }}" on-change="{{ setName }}" error="{{ errors.name }}" hint-size="100%,80px"></x-import>
+            <x-import component-from-global-scope="UrbanGrowthLabsDesignSystem_d46328.Input" label="Business name" placeholder="Rivera's Barbershop" value="{{ form.business }}" on-change="{{ setBusiness }}" error="{{ errors.business }}" hint-size="100%,80px"></x-import>
+          </div>
+          <x-import component-from-global-scope="UrbanGrowthLabsDesignSystem_d46328.Input" label="Email" type="email" placeholder="you@business.com" value="{{ form.email }}" on-change="{{ setEmail }}" error="{{ errors.email }}" hint-size="100%,80px"></x-import>
+          <x-import component-from-global-scope="UrbanGrowthLabsDesignSystem_d46328.Select" label="Service interested in" value="{{ form.service }}" on-change="{{ setService }}" hint-size="100%,80px">
+            <option value="">Choose one…</option>
+            <sc-for list="{{ serviceOptions }}" as="opt" hint-placeholder-count="5"><option value="{{ opt }}">{{ opt }}</option></sc-for>
+          </x-import>
+          <div style="display:flex; flex-direction:column; gap:7px;">
+            <label style="font-family:'Montserrat',sans-serif; font-weight:600; font-size:12px; letter-spacing:0.04em; text-transform:uppercase; color:var(--text-muted);">Your goals</label>
+            <textarea placeholder="What does growth look like for you?" value="{{ form.goal }}" onChange="{{ setGoal }}" style="min-height:96px; background:var(--surface-panel); border:1px solid var(--border-default); border-radius:var(--radius-md); padding:14px; color:var(--text-body); font-family:'Inter',sans-serif; font-size:14px; resize:vertical; outline:none;"></textarea>
+          </div>
+          <div><x-import component-from-global-scope="UrbanGrowthLabsDesignSystem_d46328.Button" variant="signal" size="lg" on-click="{{ submit }}" hint-size="auto,54px">Request my consult</x-import></div>
+        </div>
+      </div>
+      <x-import component-from-global-scope="UrbanGrowthLabsDesignSystem_d46328.Card" variant="glow" padding="lg" hint-size="100%,320px">
+        <div style="font-family:'Inter',sans-serif; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-subtle); margin-bottom:20px;">What to expect</div>
+        <div style="display:flex; flex-direction:column; gap:20px;">
+          <div style="display:flex; gap:14px;"><span style="flex:0 0 28px; height:28px; border-radius:99px; background:var(--ugl-purple-600); color:#fff; display:flex; align-items:center; justify-content:center; font-family:'Montserrat'; font-weight:800; font-size:13px;">1</span><div><div style="font-family:'Montserrat'; font-weight:700; font-size:14px; color:var(--ugl-off-white);">We review your channels</div><div style="font-size:13px; color:var(--text-muted); margin-top:3px;">A quick audit of your market and current presence.</div></div></div>
+          <div style="display:flex; gap:14px;"><span style="flex:0 0 28px; height:28px; border-radius:99px; background:var(--ugl-purple-500); color:#fff; display:flex; align-items:center; justify-content:center; font-family:'Montserrat'; font-weight:800; font-size:13px;">2</span><div><div style="font-family:'Montserrat'; font-weight:700; font-size:14px; color:var(--ugl-off-white);">A 30-minute call</div><div style="font-size:13px; color:var(--text-muted); margin-top:3px;">We map the highest-converting opportunities.</div></div></div>
+          <div style="display:flex; gap:14px;"><span style="flex:0 0 28px; height:28px; border-radius:99px; background:var(--ugl-vivid-violet); color:#fff; display:flex; align-items:center; justify-content:center; font-family:'Montserrat'; font-weight:800; font-size:13px;">3</span><div><div style="font-family:'Montserrat'; font-weight:700; font-size:14px; color:var(--ugl-off-white);">A clear, no-obligation plan</div><div style="font-size:13px; color:var(--text-muted); margin-top:3px;">You leave with a concrete next step.</div></div></div>
+        </div>
+        <div style="margin-top:26px; padding-top:20px; border-top:1px solid var(--border-subtle); font-size:13px; color:var(--text-subtle); line-height:1.7;">hello@uglabs.com<br>New York, NY · Mon–Fri 9–6 ET</div>
+      </x-import>
+    </section>
+    </sc-if>
+  </div>
+  </sc-if>
+
+  <!--PAGES_END-->
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer style="position:relative; z-index:1; border-top:1px solid var(--border-subtle); background:var(--ugl-night-1);">
+    <div style="max-width:1140px; margin:0 auto; padding:52px 24px; display:flex; flex-wrap:wrap; gap:40px; justify-content:space-between;">
+      <div style="max-width:320px;">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;"><img src="assets/ugl-icon-mark.svg" style="height:28px;"><span style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:15px; color:var(--ugl-off-white);">URBAN GROWTH <span style="color:var(--ugl-vivid-violet);">LABS</span></span></div>
+        <p style="font-size:14px; line-height:1.6; color:var(--text-muted); margin:0;">We turn data into real growth — research-led marketing systems built for New York City's local businesses.</p>
+      </div>
+      <div style="display:flex; gap:56px; flex-wrap:wrap;">
+        <div>
+          <div style="font-family:'Inter',sans-serif; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-subtle); margin-bottom:14px;">Explore</div>
+          <div style="display:flex; flex-direction:column; gap:10px; align-items:flex-start;">
+            <sc-for list="{{ nav }}" as="item" hint-placeholder-count="4"><button onClick="{{ item.onClick }}" style="background:none; border:none; cursor:pointer; font-family:'Inter',sans-serif; font-size:14px; color:var(--text-muted); padding:0;">{{ item.label }}</button></sc-for>
+            <button onClick="{{ goContact }}" style="background:none; border:none; cursor:pointer; font-family:'Inter',sans-serif; font-size:14px; color:var(--text-muted); padding:0;">Contact</button>
+          </div>
+        </div>
+        <div>
+          <div style="font-family:'Inter',sans-serif; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-subtle); margin-bottom:14px;">Get in touch</div>
+          <div style="display:flex; flex-direction:column; gap:10px; font-size:14px; color:var(--text-muted);"><span>hello@uglabs.com</span><span>New York, NY</span><span>Mon–Fri · 9–6 ET</span></div>
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid var(--border-subtle);">
+      <div style="max-width:1140px; margin:0 auto; padding:18px 24px; display:flex; flex-wrap:wrap; gap:16px; justify-content:space-between; align-items:center; font-size:12px; color:var(--text-subtle);">
+        <span>© {{ year }} Urban Growth Labs</span>
+        <span style="letter-spacing:0.18em; text-transform:uppercase; color:var(--ugl-vivid-violet);">Data. Strategy. Growth. Execution.</span>
+      </div>
+    </div>
+  </footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;heroLayout&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;split&quot;,&quot;editorial&quot;],&quot;default&quot;:&quot;split&quot;,&quot;tsType&quot;:&quot;'split' | 'editorial'&quot;,&quot;section&quot;:&quot;Homepage&quot;,&quot;label&quot;:&quot;Hero layout&quot;}}">
+class Component extends DCLogic {
+  state = {
+    page: 'home',
+    workFilter: 'all',
+    community: false,
+    form: { name: '', business: '', email: '', service: '', goal: '' },
+    errors: {},
+    submitted: false,
+  };
+
+  go = (page) => {
+    this.setState({ page });
+    try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) { try { window.scrollTo(0, 0); } catch (_) {} }
+  };
+
+  field = (key, val) => {
+    this.setState((s) => ({ form: { ...s.form, [key]: val }, errors: { ...s.errors, [key]: undefined } }));
+  };
+
+  submit = () => {
+    const f = this.state.form;
+    const errors = {};
+    if (!f.name.trim()) errors.name = 'Please add your name';
+    if (!f.business.trim()) errors.business = 'Business name required';
+    if (!f.email.trim()) errors.email = 'Email required';
+    else if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(f.email)) errors.email = 'Enter a valid email';
+    if (Object.keys(errors).length) { this.setState({ errors }); return; }
+    this.setState({ submitted: true });
+    try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) {}
+  };
+
+  resetForm = () => this.setState({ submitted: false, form: { name: '', business: '', email: '', service: '', goal: '' }, errors: {} });
+
+  renderVals() {
+    const { page, workFilter, community, form, errors, submitted } = this.state;
+    const go = this.go;
+    const heroLayout = this.props.heroLayout ?? 'split';
+
+    const nav = [
+      { id: 'services', label: 'Services' },
+      { id: 'work', label: 'Work' },
+      { id: 'pricing', label: 'Pricing' },
+      { id: 'about', label: 'About' },
+    ].map((n) => ({ ...n, onClick: () => go(n.id), color: page === n.id ? 'var(--ugl-vivid-violet)' : 'var(--text-muted)' }));
+
+    const services = [
+      { key: 'social', name: 'Social media', desc: 'Channel strategy, content calendars, creative, and community management — focused on the platforms that convert.' },
+      { key: 'web', name: 'Website & infrastructure', desc: 'Fast, modern, conversion-focused sites with the tracking and integrations to measure real results.' },
+      { key: 'design', name: 'Graphic design', desc: 'Brand identity, menus, and content that turn browsers into buyers.' },
+    ];
+    const support = ['Data analysis', 'Marketing automation', 'Market research'];
+
+    const methodSteps = [
+      { n: '1', k: 'Discover', d: 'Research the business, audience, and competitors. Audit channels and find the gaps.', c: 'var(--ugl-purple-600)' },
+      { n: '2', k: 'Strategize', d: 'Plan the pipeline around the highest-converting channels and the metrics that matter.', c: 'var(--ugl-purple-500)' },
+      { n: '3', k: 'Execute', d: 'Build and launch — site, social, and creative — then test and optimize.', c: 'var(--ugl-vivid-violet)' },
+      { n: '4', k: 'Grow', d: 'Scale what works, report results, and reinvest in the next opportunity.', c: 'var(--ugl-signal-yellow)' },
+    ];
+
+    const values = [
+      { k: 'Curious', d: 'Ask more. Dig deeper.' },
+      { k: 'Bold', d: 'Challenge norms. Create impact.' },
+      { k: 'Intelligent', d: 'Data-first, always learning.' },
+      { k: 'Adaptive', d: 'Move fast, evolve faster.' },
+      { k: 'Impactful', d: 'Real results, real change.' },
+    ];
+
+    const allCases = [
+      { id: 1, name: 'Brooklyn barbershop', cat: 'store', tag: 'Storefront', result: '+62%', metric: 'bookings / 90 days', svc: 'Social · Website' },
+      { id: 2, name: 'Queens smoothie bar', cat: 'food', tag: 'Food & bev', result: '2.4×', metric: 'web traffic', svc: 'Website · Design' },
+      { id: 3, name: 'Harlem coffee shop', cat: 'food', tag: 'Food & bev', result: '+18.7%', metric: 'lift in CTR', svc: 'Brand · Social' },
+      { id: 4, name: 'Bronx salon', cat: 'salon', tag: 'Salons', result: '+41%', metric: 'repeat clients', svc: 'Social · Automation' },
+      { id: 5, name: 'LES restaurant', cat: 'food', tag: 'Food & bev', result: '+33%', metric: 'covers / week', svc: 'Website · Design' },
+      { id: 6, name: 'Astoria nail studio', cat: 'salon', tag: 'Salons', result: '+28%', metric: 'new clients', svc: 'Social · Website' },
+    ];
+    const filteredCases = workFilter === 'all' ? allCases : allCases.filter((c) => c.cat === workFilter);
+    const homeCases = allCases.slice(0, 3);
+    const workTabs = [
+      { id: 'all', label: 'All' },
+      { id: 'food', label: 'Food & bev' },
+      { id: 'store', label: 'Storefront' },
+      { id: 'salon', label: 'Salons' },
+    ];
+
+    const tiersRaw = [
+      { key: 'starter', name: 'Starter', tagline: 'Entry package for small local businesses', base: '$750', comm: '$525', unit: 'one-time', features: ['Social profile setup', 'One channel', 'Monthly snapshot report'], featured: false },
+      { key: 'growth', name: 'Growth', tagline: 'Core pipeline across social + web + design', base: '$1,800', comm: '$1,260', unit: '/mo', features: ['Social management', 'Website build', 'Creative & design', 'Monthly strategy call'], featured: true },
+      { key: 'scale', name: 'Scale', tagline: 'Full pipeline with automation & analytics', base: '$3,500', comm: '$2,450', unit: '/mo', features: ['Everything in Growth', 'Marketing automation', 'Advanced analytics', 'Bi-weekly strategy'], featured: false },
+      { key: 'project', name: 'Project', tagline: 'One-off builds — website or brand identity', base: 'from $2,500', comm: 'from $1,750', unit: '', features: ['Website or brand build', 'Fixed scope', 'Two revision rounds'], featured: false },
+    ];
+    const tiers = tiersRaw.map((t) => ({ ...t, price: community ? t.comm : t.base }));
+
+    const compareRows = [
+      { f: 'Social media management', s: true, g: true, x: true },
+      { f: 'Website design & build', s: false, g: true, x: true },
+      { f: 'Graphic & content design', s: false, g: true, x: true },
+      { f: 'Marketing automation', s: false, g: false, x: true },
+      { f: 'Advanced analytics & reporting', s: false, g: false, x: true },
+    ].map((r) => ({ ...r, sMark: r.s ? '✓' : '—', gMark: r.g ? '✓' : '—', xMark: r.x ? '✓' : '—' }));
+
+    const serviceOptions = ['Social media', 'Website & infrastructure', 'Graphic design', 'The full pipeline', 'Not sure yet'];
+
+    return {
+      page,
+      isHome: page === 'home', isServices: page === 'services', isWork: page === 'work',
+      isPricing: page === 'pricing', isAbout: page === 'about', isContact: page === 'contact',
+      splitHero: heroLayout !== 'editorial',
+      editorialHero: heroLayout === 'editorial',
+      go,
+      goHome: () => go('home'), goContact: () => go('contact'),
+      goServices: () => go('services'), goWork: () => go('work'), goPricing: () => go('pricing'), goAbout: () => go('about'),
+      nav, services, support, methodSteps, values,
+      filteredCases, homeCases, featured: allCases[0],
+      workTabs, workFilter, setWorkFilter: (id) => this.setState({ workFilter: id }),
+      tiers, community, toggleCommunity: (v) => this.setState({ community: v }),
+      compareRows, serviceOptions,
+      form, errors, submitted, notSubmitted: !submitted,
+      setName: (e) => this.field('name', e.target.value),
+      setBusiness: (e) => this.field('business', e.target.value),
+      setEmail: (e) => this.field('email', e.target.value),
+      setGoal: (e) => this.field('goal', e.target.value),
+      setService: (e) => this.field('service', e.target.value),
+      submit: this.submit, resetForm: this.resetForm,
+      year: new Date().getFullYear(),
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/urban-growth-labs-design-system-d46328cc-4621-4c0a-9a70-8d3062f6acf6/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/urban-growth-labs-design-system-d46328cc-4621-4c0a-9a70-8d3062f6acf6/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/urban-growth-labs-design-system-d46328cc-4621-4c0a-9a70-8d3062f6acf6/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/urban-growth-labs-design-system-d46328cc-4621-4c0a-9a70-8d3062f6acf6/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/urban-growth-labs-design-system-d46328cc-4621-4c0a-9a70-8d3062f6acf6/tokens/effects.css">
+  <link rel="stylesheet" href="_ds/urban-growth-labs-design-system-d46328cc-4621-4c0a-9a70-8d3062f6acf6/tokens/base.css">
+  <link rel="stylesheet" href="_ds/urban-growth-labs-design-system-d46328cc-4621-4c0a-9a70-8d3062f6acf6/styles.css">
+  <script src="_ds/urban-growth-labs-design-system-d46328cc-4621-4c0a-9a70-8d3062f6acf6/_ds_bundle.js"></script>
+  <meta name="design_doc_mode" content="canvas">
+</helmet>
+
+<!-- ====================== TITLE BLOCK ====================== -->
+<div style="position:absolute; left:80px; top:60px; width:1600px;">
+  <div data-drags-parent="1" style="display:flex; align-items:center; gap:14px; margin-bottom:14px;">
+    <img src="assets/ugl-icon-mark.svg" alt="UGL flask mark" style="height:46px; width:auto; filter:drop-shadow(0 0 14px rgba(123,27,255,0.45));">
+    <div>
+      <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:26px; letter-spacing:-0.01em; color:var(--ugl-off-white); line-height:1;">Urban Growth Labs — Website Wireframes</div>
+      <div style="font-family:'Inter',sans-serif; font-size:13px; color:#b9a8e0; margin-top:6px;">Mid-fi structural exploration · real type + brand color, placeholder art · desktop + mobile</div>
+    </div>
+  </div>
+  <div style="display:flex; gap:10px; flex-wrap:wrap; font-family:'Inter',sans-serif; font-size:11px; color:#b9a8e0; margin-top:6px;">
+    <span style="display:inline-flex; align-items:center; gap:7px; background:var(--ugl-night-3); border:1px solid var(--border-default); border-radius:999px; padding:6px 12px;"><span style="width:18px; height:10px; border:1px dashed #a259ff; border-radius:2px; background:repeating-linear-gradient(45deg,rgba(162,89,255,0.18) 0 4px,transparent 4px 8px);"></span>= placeholder art / image</span>
+    <span style="display:inline-flex; align-items:center; gap:7px; background:var(--ugl-night-3); border:1px solid var(--border-default); border-radius:999px; padding:6px 12px;"><span style="width:22px; height:6px; border-radius:3px; background:rgba(120,110,140,0.45);"></span>= placeholder copy</span>
+    <span style="display:inline-flex; align-items:center; gap:7px; background:var(--ugl-night-3); border:1px solid var(--border-default); border-radius:999px; padding:6px 12px;"><span style="width:12px; height:12px; border-radius:999px; background:#FFE600;"></span>= signal-yellow CTA (one per view)</span>
+  </div>
+</div>
+
+<!-- ====================== SECTION: SITE MAP ====================== -->
+<div data-drags-parent="0" style="position:absolute; left:80px; top:230px; font-family:'Montserrat',sans-serif; font-weight:800; font-size:18px; letter-spacing:0.02em; color:var(--ugl-off-white); text-transform:uppercase;">01 · Site Map</div>
+
+<div style="position:absolute; left:80px; top:272px; width:1480px;">
+  <div data-drags-parent="1" style="position:absolute; top:-22px; left:2px; font-family:'Inter',sans-serif; font-size:12px; font-weight:600; color:#b9a8e0;">Primary navigation &amp; page hierarchy</div>
+  <div style="background:radial-gradient(120% 120% at 12% 0%, rgba(107,0,255,0.20), transparent 60%), var(--ugl-deep-night); border:1px solid var(--border-default); border-radius:14px; box-shadow:0 24px 60px -34px rgba(107,0,255,0.55); padding:30px 34px;">
+    <!-- Home node -->
+    <div style="display:flex; flex-direction:column; align-items:center; gap:0;">
+      <div style="display:flex; align-items:center; gap:10px; background:var(--ugl-signal-yellow); color:#0A0714; font-family:'Montserrat',sans-serif; font-weight:800; font-size:15px; border-radius:10px; padding:12px 22px; box-shadow:0 0 22px rgba(255,230,0,0.35);">
+        <img src="assets/ugl-icon-mark.svg" style="height:20px; width:auto;">Home / Landing
+      </div>
+      <div style="width:2px; height:26px; background:var(--border-strong);"></div>
+      <!-- branch line -->
+      <div style="width:86%; height:2px; background:var(--border-strong);"></div>
+      <div style="display:flex; justify-content:space-between; width:100%; margin-top:-1px;">
+        <!-- columns -->
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center;"><div style="width:2px; height:24px; background:var(--border-strong);"></div><div style="font-family:'Montserrat',sans-serif; font-weight:700; font-size:13px; color:var(--ugl-off-white); background:var(--ugl-night-3); border:1px solid var(--border-strong); border-radius:9px; padding:11px 16px; text-align:center; min-width:120px;">Services</div><div style="margin-top:12px; display:flex; flex-direction:column; gap:6px; font-family:'Inter',sans-serif; font-size:11px; color:var(--text-muted); text-align:center;"><span>Social media</span><span>Website &amp; infra</span><span>Graphic design</span><span style="color:var(--text-subtle);">Data · automation · research</span></div></div>
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center;"><div style="width:2px; height:24px; background:var(--border-strong);"></div><div style="font-family:'Montserrat',sans-serif; font-weight:700; font-size:13px; color:var(--ugl-off-white); background:var(--ugl-night-3); border:1px solid var(--border-strong); border-radius:9px; padding:11px 16px; text-align:center; min-width:120px;">Work</div><div style="margin-top:12px; display:flex; flex-direction:column; gap:6px; font-family:'Inter',sans-serif; font-size:11px; color:var(--text-muted); text-align:center;"><span>Case studies</span><span>Results / before·after</span><span>Case detail →</span></div></div>
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center;"><div style="width:2px; height:24px; background:var(--border-strong);"></div><div style="font-family:'Montserrat',sans-serif; font-weight:700; font-size:13px; color:var(--ugl-off-white); background:var(--ugl-night-3); border:1px solid var(--border-strong); border-radius:9px; padding:11px 16px; text-align:center; min-width:120px;">Pricing</div><div style="margin-top:12px; display:flex; flex-direction:column; gap:6px; font-family:'Inter',sans-serif; font-size:11px; color:var(--text-muted); text-align:center;"><span>Starter / Growth</span><span>Scale / Project</span><span>Community rate</span></div></div>
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center;"><div style="width:2px; height:24px; background:var(--border-strong);"></div><div style="font-family:'Montserrat',sans-serif; font-weight:700; font-size:13px; color:var(--ugl-off-white); background:var(--ugl-night-3); border:1px solid var(--border-strong); border-radius:9px; padding:11px 16px; text-align:center; min-width:120px;">About</div><div style="margin-top:12px; display:flex; flex-direction:column; gap:6px; font-family:'Inter',sans-serif; font-size:11px; color:var(--text-muted); text-align:center;"><span>Mission &amp; values</span><span>The method</span><span>Founder · NYC</span></div></div>
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center;"><div style="width:2px; height:24px; background:var(--ugl-signal-yellow);"></div><div style="font-family:'Montserrat',sans-serif; font-weight:700; font-size:13px; color:#0A0714; background:var(--ugl-signal-yellow); border-radius:9px; padding:11px 16px; text-align:center; min-width:120px; box-shadow:0 0 18px rgba(255,230,0,0.3);">Contact</div><div style="margin-top:12px; display:flex; flex-direction:column; gap:6px; font-family:'Inter',sans-serif; font-size:11px; color:var(--text-muted); text-align:center;"><span>Book a consult</span><span>Free 30-min</span><span>Conversion goal ★</span></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ====================== SECTION: HOMEPAGE VARIATIONS ====================== -->
+<div data-drags-parent="0" style="position:absolute; left:80px; top:690px; font-family:'Montserrat',sans-serif; font-weight:800; font-size:18px; letter-spacing:0.02em; color:var(--ugl-off-white); text-transform:uppercase;">02 · Homepage — 3 directions</div>
+<div data-drags-parent="0" style="position:absolute; left:80px; top:716px; font-family:'Inter',sans-serif; font-size:12px; color:#b9a8e0;">Same content, three structural takes. Mobile pair shown for the recommended direction (A).</div>
+
+
+<!-- ============ HOMEPAGE VARIANT A — desktop ============ -->
+<div style="position:absolute; left:80px; top:760px; width:560px;">
+  <div data-drags-parent="1" style="position:absolute; top:-24px; left:2px; display:flex; align-items:center; gap:8px; font-family:'Inter',sans-serif; font-size:12px; font-weight:600; color:#b9a8e0;"><span style="width:6px; height:6px; border-radius:2px; background:var(--ugl-vivid-violet);"></span>Variant A — “Split data hero” · recommended</div>
+  <div style="border-radius:13px; overflow:hidden; border:1px solid var(--border-default); box-shadow:0 30px 70px -38px rgba(107,0,255,0.6);">
+    <!-- browser chrome -->
+    <div style="display:flex; align-items:center; gap:7px; padding:9px 12px; background:#0c0918; border-bottom:1px solid var(--border-subtle);">
+      <span style="width:8px; height:8px; border-radius:999px; background:#3a3350;"></span><span style="width:8px; height:8px; border-radius:999px; background:#3a3350;"></span><span style="width:8px; height:8px; border-radius:999px; background:#3a3350;"></span>
+      <div style="flex:1; margin-left:8px; height:18px; border-radius:999px; background:#15102a; border:1px solid var(--border-subtle); display:flex; align-items:center; padding:0 10px; font-family:'Inter',sans-serif; font-size:10px; color:#6f6391;">uglabs.com</div>
+    </div>
+    <!-- page body -->
+    <div style="background:radial-gradient(120% 70% at 70% -8%, rgba(107,0,255,0.28), transparent 55%), var(--ugl-deep-night);">
+      <!-- nav -->
+      <div style="display:flex; align-items:center; justify-content:space-between; padding:13px 18px; border-bottom:1px solid var(--border-subtle);">
+        <div style="display:flex; align-items:center; gap:8px;"><img src="assets/ugl-icon-mark.svg" style="height:22px;"><span style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:13px; color:var(--ugl-off-white); letter-spacing:-0.01em;">URBAN GROWTH <span style="color:var(--ugl-vivid-violet);">LABS</span></span></div>
+        <div style="display:flex; align-items:center; gap:14px; font-family:'Inter',sans-serif; font-size:11px; color:var(--text-muted);"><span>Services</span><span>Work</span><span>Pricing</span><span>About</span><span style="background:var(--ugl-signal-yellow); color:#0A0714; font-weight:700; border-radius:999px; padding:7px 12px;">Book a consult</span></div>
+      </div>
+      <!-- hero -->
+      <div style="display:flex; gap:18px; padding:34px 18px 30px; align-items:center;">
+        <div style="flex:1.05;">
+          <div style="font-family:'Inter',sans-serif; font-size:10px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:var(--ugl-vivid-violet); margin-bottom:12px;">Data-driven marketing · NYC</div>
+          <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:32px; line-height:1.05; letter-spacing:-0.02em; color:var(--ugl-off-white);">We turn data into <span style="color:var(--ugl-vivid-violet);">real growth.</span></div>
+          <div style="font-family:'Inter',sans-serif; font-size:13px; line-height:1.55; color:var(--text-muted); margin-top:14px; max-width:280px;">Research-led marketing systems that move local NYC businesses from discovery to conversion — affordably.</div>
+          <div style="display:flex; gap:10px; margin-top:20px;">
+            <span style="background:var(--ugl-signal-yellow); color:#0A0714; font-family:'Montserrat',sans-serif; font-weight:700; font-size:12px; border-radius:999px; padding:11px 18px; box-shadow:0 0 22px rgba(255,230,0,0.32);">Book a free consult</span>
+            <span style="border:1px solid var(--border-strong); color:var(--ugl-off-white); font-family:'Inter',sans-serif; font-weight:600; font-size:12px; border-radius:999px; padding:11px 18px;">See our work →</span>
+          </div>
+          <div style="font-family:'Inter',sans-serif; font-size:10px; color:var(--text-subtle); margin-top:14px; letter-spacing:0.16em; text-transform:uppercase;">Data. Strategy. Growth. Execution.</div>
+        </div>
+        <!-- dashboard placeholder -->
+        <div style="flex:0.95; height:210px; border-radius:12px; border:1px dashed var(--border-strong); background:repeating-linear-gradient(45deg,rgba(162,89,255,0.06) 0 9px,transparent 9px 18px), var(--ugl-night-3); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; padding:14px;">
+          <div style="display:flex; align-items:flex-end; gap:5px; height:64px;"><span style="width:11px; height:30%; background:var(--ugl-purple-700); border-radius:2px;"></span><span style="width:11px; height:55%; background:var(--ugl-purple-500); border-radius:2px;"></span><span style="width:11px; height:42%; background:var(--ugl-purple-600); border-radius:2px;"></span><span style="width:11px; height:78%; background:var(--ugl-vivid-violet); border-radius:2px;"></span><span style="width:11px; height:100%; background:var(--ugl-vivid-violet); border-radius:2px;"></span></div>
+          <div style="font-family:'Inter',sans-serif; font-size:9px; letter-spacing:0.12em; text-transform:uppercase; color:#6f6391; text-align:center;">◇ Live growth dashboard art</div>
+        </div>
+      </div>
+      <!-- stat trust band -->
+      <div style="display:flex; gap:0; border-top:1px solid var(--border-subtle); border-bottom:1px solid var(--border-subtle); background:var(--ugl-night-2);">
+        <div style="flex:1; padding:16px 12px; text-align:center; border-right:1px solid var(--border-subtle);"><div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:20px; color:var(--ugl-off-white);">34.2K</div><div style="font-family:'Inter',sans-serif; font-size:9px; color:var(--text-subtle); margin-top:3px;">conversions driven</div></div>
+        <div style="flex:1; padding:16px 12px; text-align:center; border-right:1px solid var(--border-subtle);"><div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:20px; color:#34E0A1;">+28.6%</div><div style="font-family:'Inter',sans-serif; font-size:9px; color:var(--text-subtle); margin-top:3px;">avg. lift / 30 days</div></div>
+        <div style="flex:1; padding:16px 12px; text-align:center;"><div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:20px; color:var(--ugl-vivid-violet);">5 boroughs</div><div style="font-family:'Inter',sans-serif; font-size:9px; color:var(--text-subtle); margin-top:3px;">local operators served</div></div>
+      </div>
+      <!-- services -->
+      <div style="padding:30px 18px;">
+        <div style="font-family:'Inter',sans-serif; font-size:10px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:var(--ugl-vivid-violet); margin-bottom:8px;">What we do</div>
+        <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:20px; color:var(--ugl-off-white); margin-bottom:4px;">A few things, done exceptionally.</div>
+        <div style="font-family:'Inter',sans-serif; font-size:11px; color:var(--text-muted); margin-bottom:18px;">Not a long menu done averagely.</div>
+        <div style="display:flex; gap:12px;">
+          <div style="flex:1; background:var(--ugl-night-3); border:1px solid var(--border-default); border-radius:12px; padding:16px;"><div style="width:30px; height:30px; border-radius:8px; border:1px dashed var(--border-strong); margin-bottom:12px;"></div><div style="font-family:'Montserrat',sans-serif; font-weight:700; font-size:13px; color:var(--ugl-off-white);">Social media</div><div style="margin-top:8px; display:flex; flex-direction:column; gap:5px;"><span style="height:5px; width:100%; background:rgba(255,255,255,0.09); border-radius:3px;"></span><span style="height:5px; width:85%; background:rgba(255,255,255,0.09); border-radius:3px;"></span><span style="height:5px; width:60%; background:rgba(255,255,255,0.09); border-radius:3px;"></span></div></div>
+          <div style="flex:1; background:var(--ugl-night-3); border:1px solid var(--border-default); border-radius:12px; padding:16px;"><div style="width:30px; height:30px; border-radius:8px; border:1px dashed var(--border-strong); margin-bottom:12px;"></div><div style="font-family:'Montserrat',sans-serif; font-weight:700; font-size:13px; color:var(--ugl-off-white);">Website &amp; infra</div><div style="margin-top:8px; display:flex; flex-direction:column; gap:5px;"><span style="height:5px; width:100%; background:rgba(255,255,255,0.09); border-radius:3px;"></span><span style="height:5px; width:85%; background:rgba(255,255,255,0.09); border-radius:3px;"></span><span style="height:5px; width:60%; background:rgba(255,255,255,0.09); border-radius:3px;"></span></div></div>
+          <div style="flex:1; background:var(--ugl-night-3); border:1px solid var(--border-default); border-radius:12px; padding:16px;"><div style="width:30px; height:30px; border-radius:8px; border:1px dashed var(--border-strong); margin-bottom:12px;"></div><div style="font-family:'Montserrat',sans-serif; font-weight:700; font-size:13px; color:var(--ugl-off-white);">Graphic design</div><div style="margin-top:8px; display:flex; flex-direction:column; gap:5px;"><span style="height:5px; width:100%; background:rgba(255,255,255,0.09); border-radius:3px;"></span><span style="height:5px; width:85%; background:rgba(255,255,255,0.09); border-radius:3px;"></span><span style="height:5px; width:60%; background:rgba(255,255,255,0.09); border-radius:3px;"></span></div></div>
+        </div>
+      </div>
+      <!-- method -->
+      <div style="padding:6px 18px 30px;">
+        <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:16px; color:var(--ugl-off-white); margin-bottom:14px;">The UGL method <span style="color:var(--text-subtle); font-weight:500; font-size:11px; font-family:'Inter';">— Plan. Test. Optimize. Scale.</span></div>
+        <div style="display:flex; gap:8px;">
+          <div style="flex:1; text-align:center;"><div style="width:26px; height:26px; border-radius:999px; background:var(--ugl-purple-600); color:#fff; font-family:'Montserrat'; font-weight:800; font-size:11px; display:flex; align-items:center; justify-content:center; margin:0 auto 8px;">1</div><div style="font-family:'Montserrat',sans-serif; font-weight:700; font-size:11px; color:var(--ugl-off-white);">Discover</div></div>
+          <div style="flex:0 0 auto; align-self:center; color:var(--text-subtle);">→</div>
+          <div style="flex:1; text-align:center;"><div style="width:26px; height:26px; border-radius:999px; background:var(--ugl-purple-500); color:#fff; font-family:'Montserrat'; font-weight:800; font-size:11px; display:flex; align-items:center; justify-content:center; margin:0 auto 8px;">2</div><div style="font-family:'Montserrat',sans-serif; font-weight:700; font-size:11px; color:var(--ugl-off-white);">Strategize</div></div>
+          <div style="flex:0 0 auto; align-self:center; color:var(--text-subtle);">→</div>
+          <div style="flex:1; text-align:center;"><div style="width:26px; height:26px; border-radius:999px; background:var(--ugl-vivid-violet); color:#fff; font-family:'Montserrat'; font-weight:800; font-size:11px; display:flex; align-items:center; justify-content:center; margin:0 auto 8px;">3</div><div style="font-family:'Montserrat',sans-serif; font-weight:700; font-size:11px; color:var(--ugl-off-white);">Execute</div></div>
+          <div style="flex:0 0 auto; align-self:center; color:var(--text-subtle);">→</div>
+          <div style="flex:1; text-align:center;"><div style="width:26px; height:26px; border-radius:999px; background:var(--ugl-signal-yellow); color:#0A0714; font-family:'Montserrat'; font-weight:800; font-size:11px; display:flex; align-items:center; justify-content:center; margin:0 auto 8px;">4</div><div style="font-family:'Montserrat',sans-serif; font-weight:700; font-size:11px; color:var(--ugl-off-white);">Grow</div></div>
+        </div>
+      </div>
+      <!-- NYC affordability band -->
+      <div style="margin:0 18px 30px; background:linear-gradient(100deg, rgba(107,0,255,0.22), rgba(162,89,255,0.08)); border:1px solid var(--border-strong); border-radius:14px; padding:22px;">
+        <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:17px; color:var(--ugl-off-white); line-height:1.25;">Built for the city. Engineered for growth.</div>
+        <div style="font-family:'Inter',sans-serif; font-size:11px; color:var(--text-muted); margin-top:8px; max-width:320px;">Professional marketing made genuinely affordable for underserved NYC neighborhoods — with a community rate for qualifying businesses.</div>
+      </div>
+      <!-- case study strip -->
+      <div style="padding:0 18px 30px;">
+        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:12px;"><div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:15px; color:var(--ugl-off-white);">Recent work</div><span style="font-family:'Inter',sans-serif; font-size:10px; color:var(--ugl-vivid-violet);">View all →</span></div>
+        <div style="display:flex; gap:12px;">
+          <div style="flex:1; border-radius:12px; overflow:hidden; border:1px solid var(--border-default);"><div style="height:78px; border:1px dashed var(--border-strong); border-bottom:none; background:repeating-linear-gradient(45deg,rgba(162,89,255,0.07) 0 9px,transparent 9px 18px); display:flex; align-items:center; justify-content:center; font-family:'Inter'; font-size:9px; color:#6f6391;">◇ before / after</div><div style="padding:12px; background:var(--ugl-night-3);"><div style="font-family:'Montserrat'; font-weight:700; font-size:12px; color:var(--ugl-off-white);">Brooklyn barbershop</div><div style="font-family:'Montserrat'; font-weight:800; font-size:15px; color:#34E0A1; margin-top:5px;">+62% bookings</div></div></div>
+          <div style="flex:1; border-radius:12px; overflow:hidden; border:1px solid var(--border-default);"><div style="height:78px; border:1px dashed var(--border-strong); border-bottom:none; background:repeating-linear-gradient(45deg,rgba(162,89,255,0.07) 0 9px,transparent 9px 18px); display:flex; align-items:center; justify-content:center; font-family:'Inter'; font-size:9px; color:#6f6391;">◇ before / after</div><div style="padding:12px; background:var(--ugl-night-3);"><div style="font-family:'Montserrat'; font-weight:700; font-size:12px; color:var(--ugl-off-white);">Queens smoothie bar</div><div style="font-family:'Montserrat'; font-weight:800; font-size:15px; color:#34E0A1; margin-top:5px;">2.4× web traffic</div></div></div>
+        </div>
+      </div>
+      <!-- consult CTA band -->
+      <div style="margin:0 18px 28px; text-align:center; background:radial-gradient(80% 120% at 50% 0%, rgba(255,230,0,0.12), transparent 60%); border:1px solid var(--border-strong); border-radius:16px; padding:28px 20px;">
+        <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:20px; color:var(--ugl-off-white);">Growth isn’t luck. It’s a system.</div>
+        <div style="font-family:'Inter',sans-serif; font-size:11px; color:var(--text-muted); margin:8px 0 16px;">Book a free 30-minute consultation. No pressure, just a plan.</div>
+        <span style="display:inline-block; background:var(--ugl-signal-yellow); color:#0A0714; font-family:'Montserrat',sans-serif; font-weight:700; font-size:13px; border-radius:999px; padding:12px 26px; box-shadow:0 0 26px rgba(255,230,0,0.4);">Book a free consult</span>
+      </div>
+      <!-- footer -->
+      <div style="padding:20px 18px; border-top:1px solid var(--border-subtle); display:flex; align-items:center; justify-content:space-between; background:var(--ugl-night-1);">
+        <div style="display:flex; align-items:center; gap:7px;"><img src="assets/ugl-icon-mark.svg" style="height:18px;"><span style="font-family:'Montserrat'; font-weight:800; font-size:11px; color:var(--ugl-off-white);">UGL</span></div>
+        <div style="display:flex; gap:12px; font-family:'Inter'; font-size:9px; color:var(--text-subtle);"><span>Services</span><span>Work</span><span>Pricing</span><span>About</span><span>Contact</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ HOMEPAGE VARIANT A — mobile ============ -->
+<div style="position:absolute; left:1960px; top:760px; width:300px;">
+  <div data-drags-parent="1" style="position:absolute; top:-24px; left:2px; display:flex; align-items:center; gap:8px; font-family:'Inter',sans-serif; font-size:12px; font-weight:600; color:#b9a8e0;"><span style="width:6px; height:6px; border-radius:2px; background:var(--ugl-vivid-violet);"></span>Variant A — mobile (responsive pair)</div>
+  <div style="border-radius:26px; overflow:hidden; border:8px solid #15102a; box-shadow:0 30px 70px -38px rgba(107,0,255,0.6);">
+    <div style="background:radial-gradient(120% 40% at 80% 0%, rgba(107,0,255,0.30), transparent 55%), var(--ugl-deep-night);">
+      <!-- status + nav -->
+      <div style="display:flex; align-items:center; justify-content:space-between; padding:8px 14px 0; font-family:'Inter'; font-size:9px; color:var(--text-subtle);"><span>9:41</span><span>● ● ●</span></div>
+      <div style="display:flex; align-items:center; justify-content:space-between; padding:12px 14px; border-bottom:1px solid var(--border-subtle);">
+        <div style="display:flex; align-items:center; gap:7px;"><img src="assets/ugl-icon-mark.svg" style="height:20px;"><span style="font-family:'Montserrat'; font-weight:800; font-size:11px; color:var(--ugl-off-white);">UGL</span></div>
+        <div style="display:flex; flex-direction:column; gap:3px;"><span style="width:18px; height:2px; background:var(--ugl-off-white);"></span><span style="width:18px; height:2px; background:var(--ugl-off-white);"></span><span style="width:18px; height:2px; background:var(--ugl-off-white);"></span></div>
+      </div>
+      <!-- hero -->
+      <div style="padding:26px 16px 24px;">
+        <div style="font-family:'Inter'; font-size:9px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:var(--ugl-vivid-violet); margin-bottom:10px;">Data-driven · NYC</div>
+        <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:27px; line-height:1.06; letter-spacing:-0.02em; color:var(--ugl-off-white);">We turn data into <span style="color:var(--ugl-vivid-violet);">real growth.</span></div>
+        <div style="font-family:'Inter'; font-size:12px; line-height:1.55; color:var(--text-muted); margin-top:12px;">Research-led marketing systems for local NYC businesses — affordably.</div>
+        <div style="display:flex; flex-direction:column; gap:9px; margin-top:18px;">
+          <span style="text-align:center; background:var(--ugl-signal-yellow); color:#0A0714; font-family:'Montserrat'; font-weight:700; font-size:12px; border-radius:999px; padding:12px; box-shadow:0 0 22px rgba(255,230,0,0.32);">Book a free consult</span>
+          <span style="text-align:center; border:1px solid var(--border-strong); color:var(--ugl-off-white); font-family:'Inter'; font-weight:600; font-size:12px; border-radius:999px; padding:12px;">See our work →</span>
+        </div>
+      </div>
+      <!-- hero art -->
+      <div style="margin:0 16px 22px; height:120px; border-radius:12px; border:1px dashed var(--border-strong); background:repeating-linear-gradient(45deg,rgba(162,89,255,0.06) 0 9px,transparent 9px 18px), var(--ugl-night-3); display:flex; align-items:center; justify-content:center; font-family:'Inter'; font-size:9px; color:#6f6391;">◇ Live growth dashboard art</div>
+      <!-- stat scroller -->
+      <div style="display:flex; gap:10px; overflow:hidden; padding:0 16px 22px;">
+        <div style="flex:0 0 auto; background:var(--ugl-night-3); border:1px solid var(--border-default); border-radius:10px; padding:12px 16px;"><div style="font-family:'Montserrat'; font-weight:800; font-size:17px; color:var(--ugl-off-white);">34.2K</div><div style="font-family:'Inter'; font-size:8px; color:var(--text-subtle);">conversions</div></div>
+        <div style="flex:0 0 auto; background:var(--ugl-night-3); border:1px solid var(--border-default); border-radius:10px; padding:12px 16px;"><div style="font-family:'Montserrat'; font-weight:800; font-size:17px; color:#34E0A1;">+28.6%</div><div style="font-family:'Inter'; font-size:8px; color:var(--text-subtle);">avg. lift</div></div>
+        <div style="flex:0 0 auto; background:var(--ugl-night-3); border:1px solid var(--border-default); border-radius:10px; padding:12px 16px; opacity:0.5;"><div style="font-family:'Montserrat'; font-weight:800; font-size:17px; color:var(--ugl-vivid-violet);">5</div><div style="font-family:'Inter'; font-size:8px; color:var(--text-subtle);">boroughs</div></div>
+      </div>
+      <!-- services stacked -->
+      <div style="padding:8px 16px 22px;">
+        <div style="font-family:'Montserrat'; font-weight:800; font-size:16px; color:var(--ugl-off-white); margin-bottom:12px;">A few things, done well.</div>
+        <div style="display:flex; flex-direction:column; gap:10px;">
+          <div style="background:var(--ugl-night-3); border:1px solid var(--border-default); border-radius:11px; padding:14px; display:flex; gap:12px; align-items:center;"><div style="width:30px; height:30px; flex:0 0 auto; border-radius:8px; border:1px dashed var(--border-strong);"></div><div><div style="font-family:'Montserrat'; font-weight:700; font-size:12px; color:var(--ugl-off-white);">Social media</div><div style="height:5px; width:90px; background:rgba(255,255,255,0.09); border-radius:3px; margin-top:6px;"></div></div></div>
+          <div style="background:var(--ugl-night-3); border:1px solid var(--border-default); border-radius:11px; padding:14px; display:flex; gap:12px; align-items:center;"><div style="width:30px; height:30px; flex:0 0 auto; border-radius:8px; border:1px dashed var(--border-strong);"></div><div><div style="font-family:'Montserrat'; font-weight:700; font-size:12px; color:var(--ugl-off-white);">Website &amp; infra</div><div style="height:5px; width:90px; background:rgba(255,255,255,0.09); border-radius:3px; margin-top:6px;"></div></div></div>
+          <div style="background:var(--ugl-night-3); border:1px solid var(--border-default); border-radius:11px; padding:14px; display:flex; gap:12px; align-items:center;"><div style="width:30px; height:30px; flex:0 0 auto; border-radius:8px; border:1px dashed var(--border-strong);"></div><div><div style="font-family:'Montserrat'; font-weight:700; font-size:12px; color:var(--ugl-off-white);">Graphic design</div><div style="height:5px; width:90px; background:rgba(255,255,255,0.09); border-radius:3px; margin-top:6px;"></div></div></div>
+        </div>
+      </div>
+      <!-- CTA band -->
+      <div style="margin:0 16px 22px; text-align:center; background:radial-gradient(80% 120% at 50% 0%, rgba(255,230,0,0.12), transparent 60%); border:1px solid var(--border-strong); border-radius:14px; padding:22px 16px;">
+        <div style="font-family:'Montserrat'; font-weight:800; font-size:16px; color:var(--ugl-off-white); line-height:1.2;">Growth isn’t luck. It’s a system.</div>
+        <span style="display:inline-block; margin-top:14px; background:var(--ugl-signal-yellow); color:#0A0714; font-family:'Montserrat'; font-weight:700; font-size:12px; border-radius:999px; padding:11px 22px;">Book a free consult</span>
+      </div>
+      <!-- footer -->
+      <div style="padding:16px; border-top:1px solid var(--border-subtle); display:flex; flex-direction:column; gap:8px; background:var(--ugl-night-1);">
+        <div style="display:flex; align-items:center; gap:7px;"><img src="assets/ugl-icon-mark.svg" style="height:16px;"><span style="font-family:'Montserrat'; font-weight:800; font-size:10px; color:var(--ugl-off-white);">URBAN GROWTH LABS</span></div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap; font-family:'Inter'; font-size:9px; color:var(--text-subtle);"><span>Services</span><span>Work</span><span>Pricing</span><span>About</span><span>Contact</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- post-it note near A -->
+<div style="position:absolute; left:1960px; top:1910px; width:240px; background:#fef4a8; padding:13px 14px; font-family:'Inter',sans-serif; font-size:11px; line-height:1.45; color:#5b5326; box-shadow:0 6px 18px -8px rgba(0,0,0,0.3); transform:rotate(-1.4deg); border-radius:2px;">Mobile keeps the <b>one</b> yellow CTA repeated top + bottom. Stats become a horizontal scroller; services stack full-width.</div>
+
+<!-- ============ HOMEPAGE VARIANT B — desktop ============ -->
+<div style="position:absolute; left:700px; top:760px; width:560px;">
+  <div data-drags-parent="1" style="position:absolute; top:-24px; left:2px; display:flex; align-items:center; gap:8px; font-family:'Inter',sans-serif; font-size:12px; font-weight:600; color:#b9a8e0;"><span style="width:6px; height:6px; border-radius:2px; background:var(--ugl-vivid-violet);"></span>Variant B — “Pipeline / full-bleed hero”</div>
+  <div style="border-radius:13px; overflow:hidden; border:1px solid var(--border-default); box-shadow:0 30px 70px -38px rgba(107,0,255,0.6);">
+    <div style="display:flex; align-items:center; gap:7px; padding:9px 12px; background:#0c0918; border-bottom:1px solid var(--border-subtle);">
+      <span style="width:8px; height:8px; border-radius:999px; background:#3a3350;"></span><span style="width:8px; height:8px; border-radius:999px; background:#3a3350;"></span><span style="width:8px; height:8px; border-radius:999px; background:#3a3350;"></span>
+      <div style="flex:1; margin-left:8px; height:18px; border-radius:999px; background:#15102a; border:1px solid var(--border-subtle); display:flex; align-items:center; padding:0 10px; font-family:'Inter'; font-size:10px; color:#6f6391;">uglabs.com</div>
+    </div>
+    <div style="background:var(--ugl-deep-night);">
+      <!-- nav (overlaid, transparent on hero) -->
+      <div style="position:relative;">
+        <!-- full-bleed hero art -->
+        <div style="height:300px; border:1px dashed var(--border-strong); border-left:none; border-right:none; background:radial-gradient(90% 120% at 30% 0%, rgba(107,0,255,0.4), transparent 60%), repeating-linear-gradient(45deg,rgba(162,89,255,0.05) 0 10px,transparent 10px 20px), var(--ugl-night-2); position:relative; overflow:hidden;">
+          <!-- nav over hero -->
+          <div style="display:flex; align-items:center; justify-content:space-between; padding:14px 18px;">
+            <div style="display:flex; align-items:center; gap:8px;"><img src="assets/ugl-icon-mark.svg" style="height:22px;"><span style="font-family:'Montserrat'; font-weight:800; font-size:13px; color:var(--ugl-off-white);">URBAN GROWTH <span style="color:var(--ugl-vivid-violet);">LABS</span></span></div>
+            <div style="display:flex; align-items:center; gap:14px; font-family:'Inter'; font-size:11px; color:var(--text-muted);"><span>Services</span><span>Work</span><span>Pricing</span><span>About</span><span style="border:1px solid var(--border-strong); border-radius:999px; padding:7px 12px; color:var(--ugl-off-white);">Contact</span></div>
+          </div>
+          <div style="position:absolute; bottom:0; left:0; right:0; height:60%; background:linear-gradient(180deg, transparent, rgba(10,7,20,0.85) 75%, var(--ugl-deep-night));"></div>
+          <div style="position:absolute; bottom:22px; left:18px; right:18px;">
+            <div style="font-family:'Inter'; font-size:9px; letter-spacing:0.18em; text-transform:uppercase; color:var(--ugl-signal-yellow); margin-bottom:8px;">Data. Strategy. Growth. Execution.</div>
+            <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:30px; line-height:1.04; letter-spacing:-0.02em; color:var(--ugl-off-white); max-width:380px;">We turn data into real growth.</div>
+            <div style="display:flex; align-items:center; gap:12px; margin-top:16px;"><span style="background:var(--ugl-signal-yellow); color:#0A0714; font-family:'Montserrat'; font-weight:700; font-size:12px; border-radius:999px; padding:11px 20px; box-shadow:0 0 24px rgba(255,230,0,0.4);">Book a free consult</span><span style="font-family:'Inter'; font-size:11px; color:var(--text-muted);">◇ neon skyline + growth arrow</span></div>
+          </div>
+        </div>
+      </div>
+      <!-- A-to-Z pipeline centerpiece -->
+      <div style="padding:32px 18px;">
+        <div style="text-align:center; margin-bottom:22px;"><div style="font-family:'Inter'; font-size:10px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:var(--ugl-vivid-violet); margin-bottom:8px;">The A-to-Z pipeline</div><div style="font-family:'Montserrat'; font-weight:800; font-size:21px; color:var(--ugl-off-white);">Every engagement is built as a system.</div></div>
+        <div style="position:relative; display:flex; gap:10px;">
+          <div style="position:absolute; top:21px; left:8%; right:8%; height:2px; background:linear-gradient(90deg,var(--ugl-purple-700),var(--ugl-vivid-violet),var(--ugl-signal-yellow));"></div>
+          <div style="flex:1; position:relative; text-align:center;"><div style="width:42px; height:42px; border-radius:999px; background:var(--ugl-night-3); border:2px solid var(--ugl-purple-600); margin:0 auto 12px; display:flex; align-items:center; justify-content:center; color:var(--ugl-off-white); font-family:'Montserrat'; font-weight:800; font-size:14px;">D</div><div style="font-family:'Montserrat'; font-weight:700; font-size:12px; color:var(--ugl-off-white);">Discover</div><div style="font-family:'Inter'; font-size:9px; color:var(--text-subtle); margin-top:4px;">Research &amp; audit</div></div>
+          <div style="flex:1; position:relative; text-align:center;"><div style="width:42px; height:42px; border-radius:999px; background:var(--ugl-night-3); border:2px solid var(--ugl-purple-500); margin:0 auto 12px; display:flex; align-items:center; justify-content:center; color:var(--ugl-off-white); font-family:'Montserrat'; font-weight:800; font-size:14px;">S</div><div style="font-family:'Montserrat'; font-weight:700; font-size:12px; color:var(--ugl-off-white);">Strategize</div><div style="font-family:'Inter'; font-size:9px; color:var(--text-subtle); margin-top:4px;">Plan the channels</div></div>
+          <div style="flex:1; position:relative; text-align:center;"><div style="width:42px; height:42px; border-radius:999px; background:var(--ugl-night-3); border:2px solid var(--ugl-vivid-violet); margin:0 auto 12px; display:flex; align-items:center; justify-content:center; color:var(--ugl-off-white); font-family:'Montserrat'; font-weight:800; font-size:14px;">E</div><div style="font-family:'Montserrat'; font-weight:700; font-size:12px; color:var(--ugl-off-white);">Execute</div><div style="font-family:'Inter'; font-size:9px; color:var(--text-subtle); margin-top:4px;">Build, launch, test</div></div>
+          <div style="flex:1; position:relative; text-align:center;"><div style="width:42px; height:42px; border-radius:999px; background:var(--ugl-signal-yellow); border:2px solid var(--ugl-signal-yellow); margin:0 auto 12px; display:flex; align-items:center; justify-content:center; color:#0A0714; font-family:'Montserrat'; font-weight:800; font-size:14px; box-shadow:0 0 18px rgba(255,230,0,0.4);">G</div><div style="font-family:'Montserrat'; font-weight:700; font-size:12px; color:var(--ugl-off-white);">Grow</div><div style="font-family:'Inter'; font-size:9px; color:var(--text-subtle); margin-top:4px;">Scale &amp; report</div></div>
+        </div>
+      </div>
+      <!-- services alternating rows -->
+      <div style="padding:0 18px 14px;">
+        <div style="display:flex; gap:16px; align-items:center; padding:16px 0; border-top:1px solid var(--border-subtle);">
+          <div style="flex:0 0 110px; height:72px; border-radius:10px; border:1px dashed var(--border-strong); background:repeating-linear-gradient(45deg,rgba(162,89,255,0.06) 0 9px,transparent 9px 18px);"></div>
+          <div style="flex:1;"><div style="font-family:'Montserrat'; font-weight:800; font-size:15px; color:var(--ugl-off-white);">Social media</div><div style="font-family:'Inter'; font-size:11px; color:var(--text-muted); margin-top:6px;">Channel strategy, content, and community on the platforms that convert.</div></div>
+        </div>
+        <div style="display:flex; gap:16px; align-items:center; padding:16px 0; border-top:1px solid var(--border-subtle); flex-direction:row-reverse;">
+          <div style="flex:0 0 110px; height:72px; border-radius:10px; border:1px dashed var(--border-strong); background:repeating-linear-gradient(45deg,rgba(162,89,255,0.06) 0 9px,transparent 9px 18px);"></div>
+          <div style="flex:1; text-align:right;"><div style="font-family:'Montserrat'; font-weight:800; font-size:15px; color:var(--ugl-off-white);">Website &amp; infrastructure</div><div style="font-family:'Inter'; font-size:11px; color:var(--text-muted); margin-top:6px;">Fast, modern, conversion-focused sites with the tracking to measure results.</div></div>
+        </div>
+        <div style="display:flex; gap:16px; align-items:center; padding:16px 0; border-top:1px solid var(--border-subtle); border-bottom:1px solid var(--border-subtle);">
+          <div style="flex:0 0 110px; height:72px; border-radius:10px; border:1px dashed var(--border-strong); background:repeating-linear-gradient(45deg,rgba(162,89,255,0.06) 0 9px,transparent 9px 18px);"></div>
+          <div style="flex:1;"><div style="font-family:'Montserrat'; font-weight:800; font-size:15px; color:var(--ugl-off-white);">Graphic design</div><div style="font-family:'Inter'; font-size:11px; color:var(--text-muted); margin-top:6px;">Brand, menus, and content that turn browsers into buyers.</div></div>
+        </div>
+      </div>
+      <!-- pricing teaser -->
+      <div style="padding:28px 18px;">
+        <div style="font-family:'Montserrat'; font-weight:800; font-size:18px; color:var(--ugl-off-white); text-align:center; margin-bottom:16px;">Pricing built for SMBs</div>
+        <div style="display:flex; gap:10px;">
+          <div style="flex:1; background:var(--ugl-night-3); border:1px solid var(--border-default); border-radius:12px; padding:16px; text-align:center;"><div style="font-family:'Inter'; font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-muted);">Starter</div><div style="font-family:'Montserrat'; font-weight:800; font-size:18px; color:var(--ugl-off-white); margin:8px 0;">$—</div><div style="height:4px; width:60%; background:rgba(255,255,255,0.09); border-radius:3px; margin:0 auto;"></div></div>
+          <div style="flex:1; background:linear-gradient(180deg, rgba(107,0,255,0.25), var(--ugl-night-3)); border:1px solid var(--ugl-vivid-violet); border-radius:12px; padding:16px; text-align:center; box-shadow:0 0 24px -6px rgba(107,0,255,0.5);"><div style="font-family:'Inter'; font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--ugl-vivid-violet);">Growth ★</div><div style="font-family:'Montserrat'; font-weight:800; font-size:18px; color:var(--ugl-off-white); margin:8px 0;">$—/mo</div><div style="height:4px; width:60%; background:rgba(255,255,255,0.14); border-radius:3px; margin:0 auto;"></div></div>
+          <div style="flex:1; background:var(--ugl-night-3); border:1px solid var(--border-default); border-radius:12px; padding:16px; text-align:center;"><div style="font-family:'Inter'; font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-muted);">Scale</div><div style="font-family:'Montserrat'; font-weight:800; font-size:18px; color:var(--ugl-off-white); margin:8px 0;">$—/mo</div><div style="height:4px; width:60%; background:rgba(255,255,255,0.09); border-radius:3px; margin:0 auto;"></div></div>
+        </div>
+        <div style="text-align:center; font-family:'Inter'; font-size:10px; color:var(--text-subtle); margin-top:12px;">Community rate available for qualifying neighborhood businesses</div>
+      </div>
+      <!-- inline consult form -->
+      <div style="margin:0 18px 28px; background:var(--ugl-night-2); border:1px solid var(--border-strong); border-radius:16px; padding:24px;">
+        <div style="font-family:'Montserrat'; font-weight:800; font-size:18px; color:var(--ugl-off-white); margin-bottom:4px;">Book a free consult</div>
+        <div style="font-family:'Inter'; font-size:11px; color:var(--text-muted); margin-bottom:16px;">Tell us about your business — we’ll bring a plan.</div>
+        <div style="display:flex; gap:10px; margin-bottom:10px;"><div style="flex:1; height:34px; border-radius:8px; background:var(--ugl-night-1); border:1px solid var(--border-default); display:flex; align-items:center; padding:0 12px; font-family:'Inter'; font-size:10px; color:var(--text-subtle);">Name</div><div style="flex:1; height:34px; border-radius:8px; background:var(--ugl-night-1); border:1px solid var(--border-default); display:flex; align-items:center; padding:0 12px; font-family:'Inter'; font-size:10px; color:var(--text-subtle);">Business</div></div>
+        <div style="height:34px; border-radius:8px; background:var(--ugl-night-1); border:1px solid var(--border-default); display:flex; align-items:center; padding:0 12px; font-family:'Inter'; font-size:10px; color:var(--text-subtle); margin-bottom:14px;">Email</div>
+        <span style="display:block; text-align:center; background:var(--ugl-signal-yellow); color:#0A0714; font-family:'Montserrat'; font-weight:700; font-size:13px; border-radius:999px; padding:12px;">Request my consult</span>
+      </div>
+      <!-- footer -->
+      <div style="padding:20px 18px; border-top:1px solid var(--border-subtle); display:flex; align-items:center; justify-content:space-between; background:var(--ugl-night-1);">
+        <div style="display:flex; align-items:center; gap:7px;"><img src="assets/ugl-icon-mark.svg" style="height:18px;"><span style="font-family:'Montserrat'; font-weight:800; font-size:11px; color:var(--ugl-off-white);">UGL</span></div>
+        <div style="display:flex; gap:12px; font-family:'Inter'; font-size:9px; color:var(--text-subtle);"><span>Services</span><span>Work</span><span>Pricing</span><span>About</span><span>Contact</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ HOMEPAGE VARIANT C — desktop ============ -->
+<div style="position:absolute; left:1320px; top:760px; width:560px;">
+  <div data-drags-parent="1" style="position:absolute; top:-24px; left:2px; display:flex; align-items:center; gap:8px; font-family:'Inter',sans-serif; font-size:12px; font-weight:600; color:#b9a8e0;"><span style="width:6px; height:6px; border-radius:2px; background:var(--ugl-vivid-violet);"></span>Variant C — “Editorial type statement”</div>
+  <div style="border-radius:13px; overflow:hidden; border:1px solid var(--border-default); box-shadow:0 30px 70px -38px rgba(107,0,255,0.6);">
+    <div style="display:flex; align-items:center; gap:7px; padding:9px 12px; background:#0c0918; border-bottom:1px solid var(--border-subtle);">
+      <span style="width:8px; height:8px; border-radius:999px; background:#3a3350;"></span><span style="width:8px; height:8px; border-radius:999px; background:#3a3350;"></span><span style="width:8px; height:8px; border-radius:999px; background:#3a3350;"></span>
+      <div style="flex:1; margin-left:8px; height:18px; border-radius:999px; background:#15102a; border:1px solid var(--border-subtle); display:flex; align-items:center; padding:0 10px; font-family:'Inter'; font-size:10px; color:#6f6391;">uglabs.com</div>
+    </div>
+    <div style="background:radial-gradient(140% 50% at 50% 0%, rgba(107,0,255,0.22), transparent 60%), var(--ugl-deep-night);">
+      <!-- nav -->
+      <div style="display:flex; align-items:center; justify-content:space-between; padding:14px 20px; border-bottom:1px solid var(--border-subtle);">
+        <div style="display:flex; align-items:center; gap:8px;"><img src="assets/ugl-icon-mark.svg" style="height:22px;"><span style="font-family:'Montserrat'; font-weight:800; font-size:13px; color:var(--ugl-off-white);">URBAN GROWTH <span style="color:var(--ugl-vivid-violet);">LABS</span></span></div>
+        <div style="display:flex; align-items:center; gap:14px; font-family:'Inter'; font-size:11px; color:var(--text-muted);"><span>Services</span><span>Work</span><span>Pricing</span><span>About</span><span style="background:var(--ugl-signal-yellow); color:#0A0714; font-weight:700; border-radius:999px; padding:7px 12px;">Book a consult</span></div>
+      </div>
+      <!-- big editorial hero, type-only -->
+      <div style="padding:48px 20px 40px;">
+        <div style="font-family:'Inter'; font-size:10px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:var(--ugl-vivid-violet); margin-bottom:18px;">A data-driven NYC marketing agency</div>
+        <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:46px; line-height:0.98; letter-spacing:-0.03em; color:var(--ugl-off-white);">We turn<br>data into<br><span style="color:var(--ugl-vivid-violet);">real growth.</span></div>
+        <div style="display:flex; align-items:center; gap:16px; margin-top:26px;">
+          <span style="background:var(--ugl-signal-yellow); color:#0A0714; font-family:'Montserrat'; font-weight:700; font-size:13px; border-radius:999px; padding:13px 24px; box-shadow:0 0 26px rgba(255,230,0,0.4);">Book a free consult</span>
+          <span style="font-family:'Inter'; font-size:12px; color:var(--text-muted);">→ See the work</span>
+        </div>
+        <div style="height:1px; background:var(--border-subtle); margin-top:36px;"></div>
+        <div style="font-family:'Inter'; font-size:11px; color:var(--text-subtle); margin-top:14px; letter-spacing:0.16em; text-transform:uppercase;">Data. Strategy. Growth. Execution.</div>
+      </div>
+      <!-- sticky stat band -->
+      <div style="display:flex; background:var(--ugl-night-2); border-top:1px solid var(--border-subtle); border-bottom:1px solid var(--border-subtle);">
+        <div style="flex:1; padding:18px; border-right:1px solid var(--border-subtle);"><div style="font-family:'Montserrat'; font-weight:800; font-size:24px; color:var(--ugl-off-white);">34.2K</div><div style="font-family:'Inter'; font-size:10px; color:var(--text-subtle); margin-top:4px;">total conversions driven</div></div>
+        <div style="flex:1; padding:18px; border-right:1px solid var(--border-subtle);"><div style="font-family:'Montserrat'; font-weight:800; font-size:24px; color:#34E0A1;">+28.6%</div><div style="font-family:'Inter'; font-size:10px; color:var(--text-subtle); margin-top:4px;">avg. lift vs last 30 days</div></div>
+        <div style="flex:1; padding:18px;"><div style="font-family:'Montserrat'; font-weight:800; font-size:24px; color:var(--ugl-vivid-violet);">$23.41</div><div style="font-family:'Inter'; font-size:10px; color:var(--text-subtle); margin-top:4px;">avg. cost per lead</div></div>
+      </div>
+      <!-- services 2x2 grid big cards -->
+      <div style="padding:32px 20px;">
+        <div style="font-family:'Montserrat'; font-weight:800; font-size:22px; color:var(--ugl-off-white); margin-bottom:18px;">Focused excellence.</div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+          <div style="background:var(--ugl-night-3); border:1px solid var(--border-default); border-radius:14px; padding:20px; min-height:120px; display:flex; flex-direction:column; justify-content:space-between;"><div style="width:34px; height:34px; border-radius:9px; border:1px dashed var(--border-strong);"></div><div><div style="font-family:'Montserrat'; font-weight:800; font-size:16px; color:var(--ugl-off-white);">Social media</div><div style="height:5px; width:80%; background:rgba(255,255,255,0.09); border-radius:3px; margin-top:8px;"></div></div></div>
+          <div style="background:var(--ugl-night-3); border:1px solid var(--border-default); border-radius:14px; padding:20px; min-height:120px; display:flex; flex-direction:column; justify-content:space-between;"><div style="width:34px; height:34px; border-radius:9px; border:1px dashed var(--border-strong);"></div><div><div style="font-family:'Montserrat'; font-weight:800; font-size:16px; color:var(--ugl-off-white);">Website &amp; infra</div><div style="height:5px; width:80%; background:rgba(255,255,255,0.09); border-radius:3px; margin-top:8px;"></div></div></div>
+          <div style="background:var(--ugl-night-3); border:1px solid var(--border-default); border-radius:14px; padding:20px; min-height:120px; display:flex; flex-direction:column; justify-content:space-between;"><div style="width:34px; height:34px; border-radius:9px; border:1px dashed var(--border-strong);"></div><div><div style="font-family:'Montserrat'; font-weight:800; font-size:16px; color:var(--ugl-off-white);">Graphic design</div><div style="height:5px; width:80%; background:rgba(255,255,255,0.09); border-radius:3px; margin-top:8px;"></div></div></div>
+          <div style="background:linear-gradient(135deg, rgba(107,0,255,0.3), var(--ugl-night-3)); border:1px solid var(--ugl-vivid-violet); border-radius:14px; padding:20px; min-height:120px; display:flex; flex-direction:column; justify-content:space-between;"><div style="width:34px; height:34px; border-radius:9px; border:1px dashed var(--ugl-vivid-violet);"></div><div><div style="font-family:'Montserrat'; font-weight:800; font-size:16px; color:var(--ugl-off-white);">+ Data &amp; automation</div><div style="font-family:'Inter'; font-size:10px; color:var(--text-muted); margin-top:6px;">the analytical layer</div></div></div>
+        </div>
+      </div>
+      <!-- case studies big tiles -->
+      <div style="padding:0 20px 32px;">
+        <div style="display:flex; align-items:baseline; justify-content:space-between; margin-bottom:14px;"><div style="font-family:'Montserrat'; font-weight:800; font-size:18px; color:var(--ugl-off-white);">Proof, not promises</div><span style="font-family:'Inter'; font-size:10px; color:var(--ugl-vivid-violet);">All case studies →</span></div>
+        <div style="border-radius:14px; overflow:hidden; border:1px solid var(--border-default); margin-bottom:12px;">
+          <div style="height:120px; border-bottom:1px dashed var(--border-strong); background:radial-gradient(80% 120% at 70% 0%, rgba(162,89,255,0.22), transparent 55%), repeating-linear-gradient(45deg,rgba(162,89,255,0.05) 0 10px,transparent 10px 20px); display:flex; align-items:flex-end; padding:14px;"><span style="font-family:'Inter'; font-size:9px; color:#7a6ca0;">◇ full-bleed case hero</span></div>
+          <div style="padding:16px; background:var(--ugl-night-3); display:flex; justify-content:space-between; align-items:center;"><div><div style="font-family:'Montserrat'; font-weight:800; font-size:14px; color:var(--ugl-off-white);">Harlem coffee shop rebrand</div><div style="font-family:'Inter'; font-size:10px; color:var(--text-muted); margin-top:4px;">Brand · website · social</div></div><div style="font-family:'Montserrat'; font-weight:800; font-size:22px; color:#34E0A1;">+18.7%</div></div>
+        </div>
+      </div>
+      <!-- pricing comparison table -->
+      <div style="padding:0 20px 32px;">
+        <div style="font-family:'Montserrat'; font-weight:800; font-size:18px; color:var(--ugl-off-white); margin-bottom:14px;">Compare packages</div>
+        <div style="border:1px solid var(--border-default); border-radius:12px; overflow:hidden;">
+          <div style="display:flex; background:var(--ugl-night-2); font-family:'Inter'; font-size:10px; color:var(--text-muted); font-weight:600;"><div style="flex:2; padding:11px 14px;">Feature</div><div style="flex:1; padding:11px; text-align:center;">Starter</div><div style="flex:1; padding:11px; text-align:center; color:var(--ugl-vivid-violet);">Growth</div><div style="flex:1; padding:11px; text-align:center;">Scale</div></div>
+          <div style="display:flex; border-top:1px solid var(--border-subtle); font-family:'Inter'; font-size:10px; color:var(--text-body);"><div style="flex:2; padding:11px 14px; color:var(--text-muted);">Social management</div><div style="flex:1; padding:11px; text-align:center; color:var(--ugl-vivid-violet);">✓</div><div style="flex:1; padding:11px; text-align:center; color:var(--ugl-vivid-violet);">✓</div><div style="flex:1; padding:11px; text-align:center; color:var(--ugl-vivid-violet);">✓</div></div>
+          <div style="display:flex; border-top:1px solid var(--border-subtle); font-family:'Inter'; font-size:10px;"><div style="flex:2; padding:11px 14px; color:var(--text-muted);">Website build</div><div style="flex:1; padding:11px; text-align:center; color:var(--text-disabled);">—</div><div style="flex:1; padding:11px; text-align:center; color:var(--ugl-vivid-violet);">✓</div><div style="flex:1; padding:11px; text-align:center; color:var(--ugl-vivid-violet);">✓</div></div>
+          <div style="display:flex; border-top:1px solid var(--border-subtle); font-family:'Inter'; font-size:10px;"><div style="flex:2; padding:11px 14px; color:var(--text-muted);">Automation &amp; analytics</div><div style="flex:1; padding:11px; text-align:center; color:var(--text-disabled);">—</div><div style="flex:1; padding:11px; text-align:center; color:var(--text-disabled);">—</div><div style="flex:1; padding:11px; text-align:center; color:var(--ugl-vivid-violet);">✓</div></div>
+        </div>
+      </div>
+      <!-- closing CTA big -->
+      <div style="padding:40px 20px; text-align:center; background:radial-gradient(70% 130% at 50% 100%, rgba(107,0,255,0.3), transparent 60%); border-top:1px solid var(--border-subtle);">
+        <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:28px; line-height:1.05; color:var(--ugl-off-white); letter-spacing:-0.02em;">Growth isn’t luck.<br>It’s a system.</div>
+        <span style="display:inline-block; margin-top:20px; background:var(--ugl-signal-yellow); color:#0A0714; font-family:'Montserrat'; font-weight:700; font-size:14px; border-radius:999px; padding:14px 30px; box-shadow:0 0 28px rgba(255,230,0,0.42);">Book a free consult</span>
+      </div>
+      <!-- footer -->
+      <div style="padding:20px; border-top:1px solid var(--border-subtle); display:flex; align-items:center; justify-content:space-between; background:var(--ugl-night-1);">
+        <div style="display:flex; align-items:center; gap:7px;"><img src="assets/ugl-icon-mark.svg" style="height:18px;"><span style="font-family:'Montserrat'; font-weight:800; font-size:11px; color:var(--ugl-off-white);">UGL</span></div>
+        <div style="display:flex; gap:12px; font-family:'Inter'; font-size:9px; color:var(--text-subtle);"><span>Services</span><span>Work</span><span>Pricing</span><span>About</span><span>Contact</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ====================== SECTION: INNER PAGES ====================== -->
+<div data-drags-parent="0" style="position:absolute; left:80px; top:2580px; font-family:'Montserrat',sans-serif; font-weight:800; font-size:18px; letter-spacing:0.02em; color:var(--ugl-off-white); text-transform:uppercase;">03 · Inner pages</div>
+<div data-drags-parent="0" style="position:absolute; left:80px; top:2606px; font-family:'Inter',sans-serif; font-size:12px; color:#b9a8e0;">Services · Work · Pricing · About · Contact — desktop layouts</div>
+
+<!-- ===== SERVICES ===== -->
+<div style="position:absolute; left:80px; top:2660px; width:500px;">
+  <div data-drags-parent="1" style="position:absolute; top:-24px; left:2px; display:flex; align-items:center; gap:8px; font-family:'Inter',sans-serif; font-size:12px; font-weight:600; color:#b9a8e0;"><span style="width:6px; height:6px; border-radius:2px; background:var(--ugl-vivid-violet);"></span>Services</div>
+  <div style="border-radius:13px; overflow:hidden; border:1px solid var(--border-default); box-shadow:0 30px 70px -38px rgba(107,0,255,0.6); background:radial-gradient(120% 40% at 80% 0%, rgba(107,0,255,0.22), transparent 55%), var(--ugl-deep-night);">
+    <div style="display:flex; align-items:center; justify-content:space-between; padding:13px 18px; border-bottom:1px solid var(--border-subtle);"><div style="display:flex; align-items:center; gap:8px;"><img src="assets/ugl-icon-mark.svg" style="height:20px;"><span style="font-family:'Montserrat'; font-weight:800; font-size:12px; color:var(--ugl-off-white);">UGL</span></div><div style="display:flex; gap:13px; font-family:'Inter'; font-size:11px; color:var(--text-muted);"><span style="color:var(--ugl-off-white);">Services</span><span>Work</span><span>Pricing</span><span>About</span><span style="background:var(--ugl-signal-yellow); color:#0A0714; font-weight:700; border-radius:999px; padding:6px 11px;">Consult</span></div></div>
+    <!-- page header -->
+    <div style="padding:30px 18px 22px;">
+      <div style="font-family:'Inter'; font-size:10px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:var(--ugl-vivid-violet); margin-bottom:10px;">Services</div>
+      <div style="font-family:'Montserrat'; font-weight:800; font-size:30px; line-height:1.05; letter-spacing:-0.02em; color:var(--ugl-off-white);">A few services,<br>done exceptionally.</div>
+      <div style="font-family:'Inter'; font-size:12px; color:var(--text-muted); margin-top:12px; max-width:320px;">Three core lines, assembled into one end-to-end pipeline around your highest-converting channels.</div>
+    </div>
+    <!-- core service detail blocks -->
+    <div style="padding:0 18px 8px; display:flex; flex-direction:column; gap:14px;">
+      <div style="display:flex; gap:16px; background:var(--ugl-night-3); border:1px solid var(--border-default); border-radius:14px; padding:18px;"><div style="flex:0 0 80px; height:80px; border-radius:10px; border:1px dashed var(--border-strong); background:repeating-linear-gradient(45deg,rgba(162,89,255,0.06) 0 9px,transparent 9px 18px);"></div><div style="flex:1;"><div style="font-family:'Montserrat'; font-weight:800; font-size:16px; color:var(--ugl-off-white);">Social media</div><div style="font-family:'Inter'; font-size:11px; color:var(--text-muted); margin-top:7px; line-height:1.5;">Channel strategy, content calendars, creative, and community management — focused on the platforms that convert.</div></div></div>
+      <div style="display:flex; gap:16px; background:var(--ugl-night-3); border:1px solid var(--border-default); border-radius:14px; padding:18px;"><div style="flex:0 0 80px; height:80px; border-radius:10px; border:1px dashed var(--border-strong); background:repeating-linear-gradient(45deg,rgba(162,89,255,0.06) 0 9px,transparent 9px 18px);"></div><div style="flex:1;"><div style="font-family:'Montserrat'; font-weight:800; font-size:16px; color:var(--ugl-off-white);">Website &amp; infrastructure</div><div style="font-family:'Inter'; font-size:11px; color:var(--text-muted); margin-top:7px; line-height:1.5;">Fast, modern, conversion-focused sites with the tracking and integrations to measure real results.</div></div></div>
+      <div style="display:flex; gap:16px; background:var(--ugl-night-3); border:1px solid var(--border-default); border-radius:14px; padding:18px;"><div style="flex:0 0 80px; height:80px; border-radius:10px; border:1px dashed var(--border-strong); background:repeating-linear-gradient(45deg,rgba(162,89,255,0.06) 0 9px,transparent 9px 18px);"></div><div style="flex:1;"><div style="font-family:'Montserrat'; font-weight:800; font-size:16px; color:var(--ugl-off-white);">Graphic design</div><div style="font-family:'Inter'; font-size:11px; color:var(--text-muted); margin-top:7px; line-height:1.5;">Brand identity, menus, and content that turn browsers into buyers.</div></div></div>
+    </div>
+    <!-- supporting capabilities -->
+    <div style="padding:18px;"><div style="font-family:'Inter'; font-size:10px; letter-spacing:0.16em; text-transform:uppercase; color:var(--text-subtle); margin-bottom:10px;">Supported by</div><div style="display:flex; gap:8px;"><span style="flex:1; text-align:center; font-family:'Inter'; font-size:10px; color:var(--text-muted); background:var(--ugl-night-2); border:1px solid var(--border-subtle); border-radius:999px; padding:8px;">Data analysis</span><span style="flex:1; text-align:center; font-family:'Inter'; font-size:10px; color:var(--text-muted); background:var(--ugl-night-2); border:1px solid var(--border-subtle); border-radius:999px; padding:8px;">Automation</span><span style="flex:1; text-align:center; font-family:'Inter'; font-size:10px; color:var(--text-muted); background:var(--ugl-night-2); border:1px solid var(--border-subtle); border-radius:999px; padding:8px;">Market research</span></div></div>
+    <!-- CTA -->
+    <div style="margin:0 18px 22px; text-align:center; border:1px solid var(--border-strong); border-radius:14px; padding:22px; background:radial-gradient(80% 120% at 50% 0%, rgba(255,230,0,0.1), transparent 60%);"><div style="font-family:'Montserrat'; font-weight:800; font-size:16px; color:var(--ugl-off-white);">Not sure where to start?</div><span style="display:inline-block; margin-top:12px; background:var(--ugl-signal-yellow); color:#0A0714; font-family:'Montserrat'; font-weight:700; font-size:12px; border-radius:999px; padding:11px 22px;">Book a free consult</span></div>
+  </div>
+</div>
+
+<!-- ===== WORK / CASE STUDIES ===== -->
+<div style="position:absolute; left:640px; top:2660px; width:500px;">
+  <div data-drags-parent="1" style="position:absolute; top:-24px; left:2px; display:flex; align-items:center; gap:8px; font-family:'Inter',sans-serif; font-size:12px; font-weight:600; color:#b9a8e0;"><span style="width:6px; height:6px; border-radius:2px; background:var(--ugl-vivid-violet);"></span>Work / case studies</div>
+  <div style="border-radius:13px; overflow:hidden; border:1px solid var(--border-default); box-shadow:0 30px 70px -38px rgba(107,0,255,0.6); background:radial-gradient(120% 40% at 80% 0%, rgba(107,0,255,0.22), transparent 55%), var(--ugl-deep-night);">
+    <div style="display:flex; align-items:center; justify-content:space-between; padding:13px 18px; border-bottom:1px solid var(--border-subtle);"><div style="display:flex; align-items:center; gap:8px;"><img src="assets/ugl-icon-mark.svg" style="height:20px;"><span style="font-family:'Montserrat'; font-weight:800; font-size:12px; color:var(--ugl-off-white);">UGL</span></div><div style="display:flex; gap:13px; font-family:'Inter'; font-size:11px; color:var(--text-muted);"><span>Services</span><span style="color:var(--ugl-off-white);">Work</span><span>Pricing</span><span>About</span><span style="background:var(--ugl-signal-yellow); color:#0A0714; font-weight:700; border-radius:999px; padding:6px 11px;">Consult</span></div></div>
+    <div style="padding:30px 18px 18px;">
+      <div style="font-family:'Inter'; font-size:10px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:var(--ugl-vivid-violet); margin-bottom:10px;">Work</div>
+      <div style="font-family:'Montserrat'; font-weight:800; font-size:30px; line-height:1.05; letter-spacing:-0.02em; color:var(--ugl-off-white);">Real results,<br>real businesses.</div>
+      <!-- filter chips -->
+      <div style="display:flex; gap:8px; margin-top:18px; flex-wrap:wrap;"><span style="font-family:'Inter'; font-size:10px; color:#0A0714; background:var(--ugl-vivid-violet); border-radius:999px; padding:6px 12px;">All</span><span style="font-family:'Inter'; font-size:10px; color:var(--text-muted); border:1px solid var(--border-default); border-radius:999px; padding:6px 12px;">Food &amp; bev</span><span style="font-family:'Inter'; font-size:10px; color:var(--text-muted); border:1px solid var(--border-default); border-radius:999px; padding:6px 12px;">Storefront</span><span style="font-family:'Inter'; font-size:10px; color:var(--text-muted); border:1px solid var(--border-default); border-radius:999px; padding:6px 12px;">Salons</span></div>
+    </div>
+    <!-- featured case -->
+    <div style="margin:0 18px 16px; border-radius:14px; overflow:hidden; border:1px solid var(--ugl-vivid-violet); box-shadow:0 0 24px -8px rgba(107,0,255,0.5);">
+      <div style="height:110px; border-bottom:1px dashed var(--border-strong); background:radial-gradient(80% 130% at 70% 0%, rgba(162,89,255,0.25), transparent 55%), repeating-linear-gradient(45deg,rgba(162,89,255,0.05) 0 10px,transparent 10px 20px); display:flex; align-items:flex-end; padding:12px;"><span style="font-family:'Inter'; font-size:9px; color:#7a6ca0;">◇ featured case hero</span></div>
+      <div style="padding:16px; background:var(--ugl-night-3); display:flex; justify-content:space-between; align-items:center;"><div><div style="font-family:'Inter'; font-size:9px; color:var(--ugl-vivid-violet); letter-spacing:0.12em; text-transform:uppercase;">Featured</div><div style="font-family:'Montserrat'; font-weight:800; font-size:15px; color:var(--ugl-off-white); margin-top:4px;">Brooklyn barbershop</div></div><div style="text-align:right;"><div style="font-family:'Montserrat'; font-weight:800; font-size:22px; color:#34E0A1;">+62%</div><div style="font-family:'Inter'; font-size:9px; color:var(--text-subtle);">bookings / 90 days</div></div></div>
+    </div>
+    <!-- case grid -->
+    <div style="padding:0 18px 8px; display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+      <div style="border-radius:12px; overflow:hidden; border:1px solid var(--border-default);"><div style="height:66px; border-bottom:1px dashed var(--border-strong); background:repeating-linear-gradient(45deg,rgba(162,89,255,0.06) 0 9px,transparent 9px 18px);"></div><div style="padding:12px; background:var(--ugl-night-3);"><div style="font-family:'Montserrat'; font-weight:700; font-size:11px; color:var(--ugl-off-white);">Queens smoothie bar</div><div style="font-family:'Montserrat'; font-weight:800; font-size:14px; color:#34E0A1; margin-top:4px;">2.4× traffic</div></div></div>
+      <div style="border-radius:12px; overflow:hidden; border:1px solid var(--border-default);"><div style="height:66px; border-bottom:1px dashed var(--border-strong); background:repeating-linear-gradient(45deg,rgba(162,89,255,0.06) 0 9px,transparent 9px 18px);"></div><div style="padding:12px; background:var(--ugl-night-3);"><div style="font-family:'Montserrat'; font-weight:700; font-size:11px; color:var(--ugl-off-white);">Harlem coffee shop</div><div style="font-family:'Montserrat'; font-weight:800; font-size:14px; color:#34E0A1; margin-top:4px;">+18.7% CTR</div></div></div>
+      <div style="border-radius:12px; overflow:hidden; border:1px solid var(--border-default);"><div style="height:66px; border-bottom:1px dashed var(--border-strong); background:repeating-linear-gradient(45deg,rgba(162,89,255,0.06) 0 9px,transparent 9px 18px);"></div><div style="padding:12px; background:var(--ugl-night-3);"><div style="font-family:'Montserrat'; font-weight:700; font-size:11px; color:var(--ugl-off-white);">Bronx salon</div><div style="font-family:'Montserrat'; font-weight:800; font-size:14px; color:#34E0A1; margin-top:4px;">+41% repeat</div></div></div>
+      <div style="border-radius:12px; overflow:hidden; border:1px solid var(--border-default);"><div style="height:66px; border-bottom:1px dashed var(--border-strong); background:repeating-linear-gradient(45deg,rgba(162,89,255,0.06) 0 9px,transparent 9px 18px);"></div><div style="padding:12px; background:var(--ugl-night-3);"><div style="font-family:'Montserrat'; font-weight:700; font-size:11px; color:var(--ugl-off-white);">SI restaurant</div><div style="font-family:'Montserrat'; font-weight:800; font-size:14px; color:#34E0A1; margin-top:4px;">+33% covers</div></div></div>
+    </div>
+    <div style="padding:18px; text-align:center;"><span style="font-family:'Inter'; font-size:11px; color:var(--ugl-off-white); border:1px solid var(--border-strong); border-radius:999px; padding:10px 20px;">Load more work</span></div>
+  </div>
+</div>
+
+<!-- ===== PRICING ===== -->
+<div style="position:absolute; left:1200px; top:2660px; width:500px;">
+  <div data-drags-parent="1" style="position:absolute; top:-24px; left:2px; display:flex; align-items:center; gap:8px; font-family:'Inter',sans-serif; font-size:12px; font-weight:600; color:#b9a8e0;"><span style="width:6px; height:6px; border-radius:2px; background:var(--ugl-vivid-violet);"></span>Pricing</div>
+  <div style="border-radius:13px; overflow:hidden; border:1px solid var(--border-default); box-shadow:0 30px 70px -38px rgba(107,0,255,0.6); background:radial-gradient(120% 40% at 80% 0%, rgba(107,0,255,0.22), transparent 55%), var(--ugl-deep-night);">
+    <div style="display:flex; align-items:center; justify-content:space-between; padding:13px 18px; border-bottom:1px solid var(--border-subtle);"><div style="display:flex; align-items:center; gap:8px;"><img src="assets/ugl-icon-mark.svg" style="height:20px;"><span style="font-family:'Montserrat'; font-weight:800; font-size:12px; color:var(--ugl-off-white);">UGL</span></div><div style="display:flex; gap:13px; font-family:'Inter'; font-size:11px; color:var(--text-muted);"><span>Services</span><span>Work</span><span style="color:var(--ugl-off-white);">Pricing</span><span>About</span><span style="background:var(--ugl-signal-yellow); color:#0A0714; font-weight:700; border-radius:999px; padding:6px 11px;">Consult</span></div></div>
+    <div style="padding:30px 18px 18px; text-align:center;">
+      <div style="font-family:'Inter'; font-size:10px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:var(--ugl-vivid-violet); margin-bottom:10px;">Pricing</div>
+      <div style="font-family:'Montserrat'; font-weight:800; font-size:28px; line-height:1.05; letter-spacing:-0.02em; color:var(--ugl-off-white);">Accessible by design.</div>
+      <div style="font-family:'Inter'; font-size:11px; color:var(--text-muted); margin-top:10px;">Project work, monthly retainers, and tiered packages.</div>
+    </div>
+    <!-- tier cards -->
+    <div style="padding:0 18px; display:flex; flex-direction:column; gap:12px;">
+      <div style="display:flex; align-items:center; gap:14px; background:var(--ugl-night-3); border:1px solid var(--border-default); border-radius:14px; padding:18px;"><div style="flex:1;"><div style="font-family:'Inter'; font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-muted);">Starter</div><div style="font-family:'Inter'; font-size:10px; color:var(--text-subtle); margin-top:5px;">Entry package for small local businesses</div></div><div style="font-family:'Montserrat'; font-weight:800; font-size:20px; color:var(--ugl-off-white);">$—</div></div>
+      <div style="display:flex; align-items:center; gap:14px; background:linear-gradient(120deg, rgba(107,0,255,0.28), var(--ugl-night-3)); border:1px solid var(--ugl-vivid-violet); border-radius:14px; padding:18px; box-shadow:0 0 24px -8px rgba(107,0,255,0.5);"><div style="flex:1;"><div style="font-family:'Inter'; font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--ugl-vivid-violet);">Growth · most popular ★</div><div style="font-family:'Inter'; font-size:10px; color:var(--text-muted); margin-top:5px;">Core pipeline across social + web + design</div></div><div style="font-family:'Montserrat'; font-weight:800; font-size:20px; color:var(--ugl-off-white);">$—/mo</div></div>
+      <div style="display:flex; align-items:center; gap:14px; background:var(--ugl-night-3); border:1px solid var(--border-default); border-radius:14px; padding:18px;"><div style="flex:1;"><div style="font-family:'Inter'; font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-muted);">Scale</div><div style="font-family:'Inter'; font-size:10px; color:var(--text-subtle); margin-top:5px;">Full pipeline with automation &amp; analytics</div></div><div style="font-family:'Montserrat'; font-weight:800; font-size:20px; color:var(--ugl-off-white);">$—/mo</div></div>
+      <div style="display:flex; align-items:center; gap:14px; background:var(--ugl-night-3); border:1px solid var(--border-default); border-radius:14px; padding:18px;"><div style="flex:1;"><div style="font-family:'Inter'; font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-muted);">Project</div><div style="font-family:'Inter'; font-size:10px; color:var(--text-subtle); margin-top:5px;">One-off builds (website, brand)</div></div><div style="font-family:'Montserrat'; font-weight:800; font-size:20px; color:var(--ugl-off-white);">$—</div></div>
+    </div>
+    <!-- community rate note -->
+    <div style="margin:16px 18px; background:rgba(255,230,0,0.08); border:1px solid rgba(255,230,0,0.35); border-radius:12px; padding:16px; display:flex; gap:12px; align-items:center;"><div style="width:30px; height:30px; flex:0 0 auto; border-radius:8px; background:var(--ugl-signal-yellow); display:flex; align-items:center; justify-content:center; color:#0A0714; font-family:'Montserrat'; font-weight:800;">★</div><div style="font-family:'Inter'; font-size:11px; color:var(--text-body); line-height:1.45;"><b style="color:var(--ugl-off-white);">Community rate.</b> Sliding-scale pricing for qualifying businesses in underserved neighborhoods.</div></div>
+    <div style="padding:0 18px 24px; text-align:center;"><span style="display:inline-block; background:var(--ugl-signal-yellow); color:#0A0714; font-family:'Montserrat'; font-weight:700; font-size:12px; border-radius:999px; padding:12px 24px;">Book a free consult</span></div>
+  </div>
+</div>
+
+<!-- ===== ABOUT ===== -->
+<div style="position:absolute; left:1760px; top:2660px; width:500px;">
+  <div data-drags-parent="1" style="position:absolute; top:-24px; left:2px; display:flex; align-items:center; gap:8px; font-family:'Inter',sans-serif; font-size:12px; font-weight:600; color:#b9a8e0;"><span style="width:6px; height:6px; border-radius:2px; background:var(--ugl-vivid-violet);"></span>About</div>
+  <div style="border-radius:13px; overflow:hidden; border:1px solid var(--border-default); box-shadow:0 30px 70px -38px rgba(107,0,255,0.6); background:radial-gradient(120% 40% at 80% 0%, rgba(107,0,255,0.22), transparent 55%), var(--ugl-deep-night);">
+    <div style="display:flex; align-items:center; justify-content:space-between; padding:13px 18px; border-bottom:1px solid var(--border-subtle);"><div style="display:flex; align-items:center; gap:8px;"><img src="assets/ugl-icon-mark.svg" style="height:20px;"><span style="font-family:'Montserrat'; font-weight:800; font-size:12px; color:var(--ugl-off-white);">UGL</span></div><div style="display:flex; gap:13px; font-family:'Inter'; font-size:11px; color:var(--text-muted);"><span>Services</span><span>Work</span><span>Pricing</span><span style="color:var(--ugl-off-white);">About</span><span style="background:var(--ugl-signal-yellow); color:#0A0714; font-weight:700; border-radius:999px; padding:6px 11px;">Consult</span></div></div>
+    <div style="padding:30px 18px 18px;">
+      <div style="font-family:'Inter'; font-size:10px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:var(--ugl-vivid-violet); margin-bottom:10px;">About</div>
+      <div style="font-family:'Montserrat'; font-weight:800; font-size:28px; line-height:1.05; letter-spacing:-0.02em; color:var(--ugl-off-white);">Built for the city.<br>Engineered for growth.</div>
+      <div style="font-family:'Inter'; font-size:12px; color:var(--text-muted); margin-top:12px; line-height:1.55;">We help NYC’s local businesses grow through data-driven marketing — and make that growth genuinely accessible to underserved communities.</div>
+    </div>
+    <!-- values -->
+    <div style="padding:6px 18px 18px;"><div style="font-family:'Inter'; font-size:10px; letter-spacing:0.16em; text-transform:uppercase; color:var(--text-subtle); margin-bottom:10px;">Our values</div><div style="display:flex; gap:8px; flex-wrap:wrap;"><span style="font-family:'Montserrat'; font-weight:700; font-size:11px; color:var(--ugl-off-white); background:var(--ugl-night-3); border:1px solid var(--border-default); border-radius:999px; padding:8px 14px;">Curious</span><span style="font-family:'Montserrat'; font-weight:700; font-size:11px; color:var(--ugl-off-white); background:var(--ugl-night-3); border:1px solid var(--border-default); border-radius:999px; padding:8px 14px;">Bold</span><span style="font-family:'Montserrat'; font-weight:700; font-size:11px; color:var(--ugl-off-white); background:var(--ugl-night-3); border:1px solid var(--border-default); border-radius:999px; padding:8px 14px;">Intelligent</span><span style="font-family:'Montserrat'; font-weight:700; font-size:11px; color:var(--ugl-off-white); background:var(--ugl-night-3); border:1px solid var(--border-default); border-radius:999px; padding:8px 14px;">Adaptive</span><span style="font-family:'Montserrat'; font-weight:700; font-size:11px; color:var(--ugl-off-white); background:var(--ugl-night-3); border:1px solid var(--border-default); border-radius:999px; padding:8px 14px;">Impactful</span></div></div>
+    <!-- founder + map -->
+    <div style="padding:0 18px 18px; display:flex; gap:12px;">
+      <div style="flex:1; background:var(--ugl-night-3); border:1px solid var(--border-default); border-radius:14px; padding:16px;"><div style="width:48px; height:48px; border-radius:999px; border:1px dashed var(--border-strong); margin-bottom:10px;"></div><div style="font-family:'Montserrat'; font-weight:800; font-size:13px; color:var(--ugl-off-white);">The founder</div><div style="font-family:'Inter'; font-size:10px; color:var(--text-muted); margin-top:6px; line-height:1.5;">5–7+ years of digital marketing, proven engagement growth across social, web &amp; email.</div></div>
+      <div style="flex:1; border-radius:14px; border:1px dashed var(--border-strong); background:repeating-linear-gradient(45deg,rgba(162,89,255,0.06) 0 9px,transparent 9px 18px); display:flex; align-items:center; justify-content:center; min-height:130px; font-family:'Inter'; font-size:9px; color:#6f6391; text-align:center;">◇ NYC neighborhoods map</div>
+    </div>
+    <!-- method recap -->
+    <div style="padding:0 18px 18px;"><div style="font-family:'Inter'; font-size:10px; letter-spacing:0.16em; text-transform:uppercase; color:var(--text-subtle); margin-bottom:10px;">The method · Plan. Test. Optimize. Scale.</div><div style="display:flex; gap:6px;"><span style="flex:1; text-align:center; font-family:'Inter'; font-size:10px; color:var(--text-muted); background:var(--ugl-night-2); border:1px solid var(--border-subtle); border-radius:8px; padding:9px 4px;">Discover</span><span style="flex:1; text-align:center; font-family:'Inter'; font-size:10px; color:var(--text-muted); background:var(--ugl-night-2); border:1px solid var(--border-subtle); border-radius:8px; padding:9px 4px;">Strategize</span><span style="flex:1; text-align:center; font-family:'Inter'; font-size:10px; color:var(--text-muted); background:var(--ugl-night-2); border:1px solid var(--border-subtle); border-radius:8px; padding:9px 4px;">Execute</span><span style="flex:1; text-align:center; font-family:'Inter'; font-size:10px; color:#0A0714; background:var(--ugl-signal-yellow); border-radius:8px; padding:9px 4px;">Grow</span></div></div>
+    <div style="padding:0 18px 24px; text-align:center;"><span style="display:inline-block; background:var(--ugl-signal-yellow); color:#0A0714; font-family:'Montserrat'; font-weight:700; font-size:12px; border-radius:999px; padding:12px 24px;">Work with us</span></div>
+  </div>
+</div>
+
+<!-- ===== CONTACT ===== -->
+<div style="position:absolute; left:2320px; top:2660px; width:500px;">
+  <div data-drags-parent="1" style="position:absolute; top:-24px; left:2px; display:flex; align-items:center; gap:8px; font-family:'Inter',sans-serif; font-size:12px; font-weight:600; color:#b9a8e0;"><span style="width:6px; height:6px; border-radius:2px; background:var(--ugl-signal-yellow);"></span>Contact — primary conversion ★</div>
+  <div style="border-radius:13px; overflow:hidden; border:1px solid var(--border-strong); box-shadow:0 30px 70px -38px rgba(107,0,255,0.6); background:radial-gradient(120% 50% at 70% 0%, rgba(107,0,255,0.3), transparent 55%), var(--ugl-deep-night);">
+    <div style="display:flex; align-items:center; justify-content:space-between; padding:13px 18px; border-bottom:1px solid var(--border-subtle);"><div style="display:flex; align-items:center; gap:8px;"><img src="assets/ugl-icon-mark.svg" style="height:20px;"><span style="font-family:'Montserrat'; font-weight:800; font-size:12px; color:var(--ugl-off-white);">UGL</span></div><div style="display:flex; gap:13px; font-family:'Inter'; font-size:11px; color:var(--text-muted);"><span>Services</span><span>Work</span><span>Pricing</span><span>About</span><span style="background:var(--ugl-signal-yellow); color:#0A0714; font-weight:700; border-radius:999px; padding:6px 11px;">Consult</span></div></div>
+    <div style="padding:30px 18px 18px;">
+      <div style="font-family:'Inter'; font-size:10px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:var(--ugl-vivid-violet); margin-bottom:10px;">Contact</div>
+      <div style="font-family:'Montserrat'; font-weight:800; font-size:30px; line-height:1.04; letter-spacing:-0.02em; color:var(--ugl-off-white);">Book a free consult.</div>
+      <div style="font-family:'Inter'; font-size:12px; color:var(--text-muted); margin-top:10px;">A free 30-minute call. We’ll bring a plan — no pressure.</div>
+    </div>
+    <div style="padding:0 18px 18px; display:flex; gap:18px;">
+      <!-- form -->
+      <div style="flex:1.3;">
+        <div style="display:flex; flex-direction:column; gap:10px;">
+          <div style="height:36px; border-radius:8px; background:var(--ugl-night-2); border:1px solid var(--border-default); display:flex; align-items:center; padding:0 12px; font-family:'Inter'; font-size:10px; color:var(--text-subtle);">Your name</div>
+          <div style="height:36px; border-radius:8px; background:var(--ugl-night-2); border:1px solid var(--border-default); display:flex; align-items:center; padding:0 12px; font-family:'Inter'; font-size:10px; color:var(--text-subtle);">Business name</div>
+          <div style="height:36px; border-radius:8px; background:var(--ugl-night-2); border:1px solid var(--border-default); display:flex; align-items:center; padding:0 12px; font-family:'Inter'; font-size:10px; color:var(--text-subtle);">Email</div>
+          <div style="height:36px; border-radius:8px; background:var(--ugl-night-2); border:1px solid var(--border-default); display:flex; align-items:center; justify-content:space-between; padding:0 12px; font-family:'Inter'; font-size:10px; color:var(--text-subtle);">Service interested in <span style="color:var(--text-muted);">▾</span></div>
+          <div style="height:74px; border-radius:8px; background:var(--ugl-night-2); border:1px solid var(--border-default); padding:10px 12px; font-family:'Inter'; font-size:10px; color:var(--text-subtle);">Tell us about your goals…</div>
+          <span style="text-align:center; background:var(--ugl-signal-yellow); color:#0A0714; font-family:'Montserrat'; font-weight:700; font-size:13px; border-radius:999px; padding:13px; box-shadow:0 0 24px rgba(255,230,0,0.4);">Request my consult</span>
+        </div>
+      </div>
+      <!-- sidebar -->
+      <div style="flex:1; display:flex; flex-direction:column; gap:12px;">
+        <div style="font-family:'Inter'; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-subtle);">What to expect</div>
+        <div style="display:flex; gap:10px;"><span style="width:20px; height:20px; flex:0 0 auto; border-radius:999px; background:var(--ugl-purple-600); color:#fff; font-family:'Montserrat'; font-weight:800; font-size:10px; display:flex; align-items:center; justify-content:center;">1</span><span style="font-family:'Inter'; font-size:10px; color:var(--text-muted); line-height:1.45;">We review your channels &amp; market</span></div>
+        <div style="display:flex; gap:10px;"><span style="width:20px; height:20px; flex:0 0 auto; border-radius:999px; background:var(--ugl-purple-500); color:#fff; font-family:'Montserrat'; font-weight:800; font-size:10px; display:flex; align-items:center; justify-content:center;">2</span><span style="font-family:'Inter'; font-size:10px; color:var(--text-muted); line-height:1.45;">A 30-min call to map opportunities</span></div>
+        <div style="display:flex; gap:10px;"><span style="width:20px; height:20px; flex:0 0 auto; border-radius:999px; background:var(--ugl-vivid-violet); color:#fff; font-family:'Montserrat'; font-weight:800; font-size:10px; display:flex; align-items:center; justify-content:center;">3</span><span style="font-family:'Inter'; font-size:10px; color:var(--text-muted); line-height:1.45;">A clear, no-obligation plan</span></div>
+        <div style="margin-top:6px; padding-top:14px; border-top:1px solid var(--border-subtle); font-family:'Inter'; font-size:10px; color:var(--text-subtle); line-height:1.6;">hello@uglabs.com<br>New York, NY<br>Mon–Fri · 9–6 ET</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- annotations -->
+<div style="position:absolute; left:1960px; top:2120px; width:240px; background:#fef4a8; padding:13px 14px; font-family:'Inter',sans-serif; font-size:11px; line-height:1.45; color:#5b5326; box-shadow:0 6px 18px -8px rgba(0,0,0,0.3); transform:rotate(1.2deg); border-radius:2px;">Each variant keeps exactly <b>one</b> signal-yellow moment per fold (the consult CTA). Everything else is purple/violet on night.</div>
+<div style="position:absolute; left:2320px; top:3210px; width:240px; background:#fef4a8; padding:13px 14px; font-family:'Inter',sans-serif; font-size:11px; line-height:1.45; color:#5b5326; box-shadow:0 6px 18px -8px rgba(0,0,0,0.3); transform:rotate(-1.2deg); border-radius:2px;">Contact is the conversion goal of the whole site — every page’s CTA routes here. Form kept short: name, business, email, goal.</div>
+</x-dc>
+</body>
+</html>
