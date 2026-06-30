@@ -1,6 +1,8 @@
-/* Auto-extracted from "UGL Logo Animation.dc.html" (v2 — sloshing liquid +
-   twinkling skyline windows). Inner SVG markup; element IDs are namespaced per
-   instance at render time. The liquid filter ref is inline so it namespaces. */
+/* Auto-extracted from "UGL Logo Animation.dc.html" (v3 — sloshing/roiling
+   liquid, rising boil particles, twinkling skyline windows). Inner SVG markup;
+   element IDs are namespaced per instance at render time. The full-canvas black
+   rect carries class="bg" (hidden unless tile mode) and the liquid filter ref is
+   inline so it namespaces. */
 export const LOGO_SVG_INNER = String.raw`
 <defs>
         <radialGradient id="radial-gradient" cx="-3004.4072987" cy="1324.9452897" fx="-3004.4072987" fy="1324.9452897" r="1.4860259" gradientTransform="translate(1226846.762085 -540168.0328369) scale(408.147583)" gradientUnits="userSpaceOnUse">
@@ -152,12 +154,12 @@ export const LOGO_SVG_INNER = String.raw`
           <path d="M495.2253113,153.3876801c-.2900085,52.1399994-.480011,106.0200043-.8299866,159.1499786-.4400024,52.4599915-2.4299927,107.1000061-24.2600098,155.0800171-23.1600037,54.4299927-67.9700012,84.960022-106.7999878,130.2999878-16.3099976,19.3900146-30.1199951,40.4500122-41.4599915,63.4299927-20.980011,42.6799927-33.5299988,89.6099854-46.8099976,135.8399658-15.1499939,52.9899902-32.2099915,115.960022-35.2599945,167.7299805-1.9199982,32.3300171-.1699982,68.9799805,27.0399933,90.3900146,54.1300049,41.2199707,191.5499878,31.2399902,265.0499878,32.9300537,42.7200317-.0100098,85.9799805,0,128.7000122-.0100098,51.3900146-.2900391,98.0700073.8499756,144.789978-3.9200439,110.3699951-10.9300537,134.6799927-47.5,118.5100098-154.3800049-8.4400024-50.7700195-26.4899902-106.5200195-41.0900269-157.7700195-14.5599976-48.6500244-28.539978-100.6400146-49.4500122-141.7700195-23.4000244-48.5900269-59.6900024-77.9899902-96.210022-113.0300293-18.8099976-18.8099976-34.5599976-41.2000122-44.8800049-66.2999878-22.289978-53.769989-20.210022-110.4400024-20.8099976-169.6400146-.210022-42.5599976-.4400024-85.1499939-.6699829-127.6000061"></path>
         </clipPath>
         <filter id="liquidRoil" x="-25%" y="-25%" width="150%" height="150%">
-          <feTurbulence type="fractalNoise" baseFrequency="0.007 0.011" numOctaves="2" seed="4" result="n">
-            <animate attributeName="baseFrequency" dur="4.6s" values="0.007 0.011;0.0095 0.015;0.007 0.011" repeatCount="indefinite"></animate>
-            <animate attributeName="seed" dur="9s" values="2;9;2" repeatCount="indefinite"></animate>
+          <feTurbulence type="fractalNoise" baseFrequency="0.008 0.013" numOctaves="2" seed="4" result="n">
+            <animate attributeName="baseFrequency" dur="2.8s" values="0.008 0.013;0.012 0.02;0.008 0.013" repeatCount="indefinite"></animate>
+            <animate attributeName="seed" dur="6s" values="2;9;2" repeatCount="indefinite"></animate>
           </feTurbulence>
-          <feDisplacementMap in="SourceGraphic" in2="n" scale="9" xChannelSelector="R" yChannelSelector="G">
-            <animate attributeName="scale" dur="3.6s" values="6;12;6" repeatCount="indefinite"></animate>
+          <feDisplacementMap in="SourceGraphic" in2="n" scale="12" xChannelSelector="R" yChannelSelector="G">
+            <animate attributeName="scale" dur="2.2s" values="9;16;9" repeatCount="indefinite"></animate>
           </feDisplacementMap>
         </filter>
         <clipPath id="flaskClipInner">
@@ -339,6 +341,27 @@ export const LOGO_SVG_INNER = String.raw`
       <circle class="bubble" style="--bd:2.12s" cx="608.835144" cy="399.5573425" r="33.9192505" fill="url(#linear-gradient-18)"></circle>
       <circle class="bubble" style="--bd:2.28s" cx="561.7250977" cy="319.4702454" r="24.4972076" fill="url(#linear-gradient-17)"></circle>
       <circle class="bubble" style="--bd:2.44s" cx="604.1241455" cy="248.8051605" r="16.9596024" fill="url(#linear-gradient-15)"></circle>
+      </g>
+
+      <g clip-path="url(#flaskClip)">
+      <circle class="boil" style="--ry:-641px;--rdur:4.44s;--rdelay:2.79s;--drift:-18.3px;--bop:0.74" cx="612.2" cy="1019.3" r="4.3" fill="#d9a6ff"></circle>
+      <circle class="boil" style="--ry:-777px;--rdur:3.41s;--rdelay:2.74s;--drift:-15.4px;--bop:0.56" cx="589.1" cy="999.9" r="9.0" fill="#d9a6ff"></circle>
+      <circle class="boil" style="--ry:-577px;--rdur:5.83s;--rdelay:5.33s;--drift:-12.2px;--bop:0.88" cx="632.5" cy="1014.1" r="4.7" fill="#d9a6ff"></circle>
+      <circle class="boil" style="--ry:-782px;--rdur:3.99s;--rdelay:0.94s;--drift:12.2px;--bop:0.59" cx="524.9" cy="1009.3" r="7.4" fill="#d9a6ff"></circle>
+      <circle class="boil" style="--ry:-815px;--rdur:4.18s;--rdelay:1.93s;--drift:-19.0px;--bop:0.60" cx="628.6" cy="1003.1" r="4.6" fill="#d9a6ff"></circle>
+      <circle class="boil" style="--ry:-759px;--rdur:4.32s;--rdelay:4.17s;--drift:7.9px;--bop:0.59" cx="726.4" cy="1012.9" r="5.2" fill="#d9a6ff"></circle>
+      <circle class="boil" style="--ry:-696px;--rdur:5.11s;--rdelay:3.56s;--drift:10.5px;--bop:0.68" cx="600.6" cy="986.3" r="3.8" fill="#d9a6ff"></circle>
+      <circle class="boil" style="--ry:-709px;--rdur:4.43s;--rdelay:1.45s;--drift:-16.4px;--bop:0.55" cx="613.8" cy="1010.7" r="9.4" fill="#d9a6ff"></circle>
+      <circle class="boil" style="--ry:-880px;--rdur:5.80s;--rdelay:4.73s;--drift:15.0px;--bop:0.72" cx="548.4" cy="1033.7" r="9.5" fill="#d9a6ff"></circle>
+      <circle class="boil" style="--ry:-631px;--rdur:4.30s;--rdelay:3.77s;--drift:9.7px;--bop:0.88" cx="477.0" cy="1002.7" r="6.0" fill="#d9a6ff"></circle>
+      <circle class="boil" style="--ry:-706px;--rdur:3.45s;--rdelay:5.45s;--drift:-18.2px;--bop:0.73" cx="472.0" cy="1005.2" r="7.6" fill="#d9a6ff"></circle>
+      <circle class="boil" style="--ry:-856px;--rdur:3.94s;--rdelay:0.13s;--drift:-15.9px;--bop:0.78" cx="606.0" cy="988.8" r="9.1" fill="#d9a6ff"></circle>
+      <circle class="boil" style="--ry:-834px;--rdur:3.67s;--rdelay:0.21s;--drift:-6.3px;--bop:0.71" cx="661.5" cy="1040.9" r="5.1" fill="#d9a6ff"></circle>
+      <circle class="boil" style="--ry:-723px;--rdur:3.35s;--rdelay:1.54s;--drift:-6.9px;--bop:0.64" cx="710.9" cy="1039.0" r="4.5" fill="#d9a6ff"></circle>
+      <circle class="boil" style="--ry:-605px;--rdur:3.66s;--rdelay:0.00s;--drift:7.2px;--bop:0.66" cx="536.8" cy="1000.7" r="9.0" fill="#d9a6ff"></circle>
+      <circle class="boil" style="--ry:-563px;--rdur:5.32s;--rdelay:2.48s;--drift:10.7px;--bop:0.87" cx="501.6" cy="1013.5" r="6.4" fill="#d9a6ff"></circle>
+      <circle class="boil" style="--ry:-679px;--rdur:3.42s;--rdelay:4.85s;--drift:-7.0px;--bop:0.57" cx="677.9" cy="1024.7" r="5.4" fill="#d9a6ff"></circle>
+      <circle class="boil" style="--ry:-705px;--rdur:4.26s;--rdelay:2.97s;--drift:13.4px;--bop:0.67" cx="558.2" cy="982.1" r="7.7" fill="#d9a6ff"></circle>
       </g>
 
       <polyline class="growthline" pathLength="1" points="248 1032 474.2831726 848.8323364 562.8078003 979.6091309 691.2174072 755.7579956 710.4047852 848.8323364 860.8444214 567.5888672" fill="none" stroke="url(#linear-gradient-19)" stroke-miterlimit="7" stroke-width="15"></polyline>

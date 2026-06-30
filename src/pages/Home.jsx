@@ -59,7 +59,7 @@ export default function Home() {
       <section className="hero panel">
         <span className="watermark" data-scroll aria-hidden="true">GROW</span>
         <Sparks points={HERO_SPARKS} />
-        <div className="hero__anim"><LogoAnimation size={136} autoReplay replayInterval={30000} /></div>
+        <div className="hero__anim"><LogoAnimation size="clamp(200px, 30vw, 340px)" autoReplay replayInterval={30000} /></div>
         <h1 className="hero__h1">We turn data into<br /><CyclingAccent /></h1>
         <p className="hero__p">
           Research-led marketing systems that move local NYC businesses from discovery to conversion, affordably.

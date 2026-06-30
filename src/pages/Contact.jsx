@@ -1,6 +1,11 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Button, Card, Field, Select, Textarea } from '../components/primitives.jsx';
 import { serviceOptions } from '../data.js';
+
+// Web3Forms access key — safe to expose in client code. Get a free key at
+// https://web3forms.com using urban-growth@labs.syedadib.com as the destination
+// email, then paste it below (or set VITE_WEB3FORMS_KEY at build time).
+const ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_KEY || 'a53bbd5f-5f67-4a27-aca1-ab0551095fbd';
 
 const empty = { name: '', business: '', email: '', service: '', goal: '' };
 
@@ -8,24 +13,60 @@ export default function Contact() {
   const [form, setForm] = useState(empty);
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [submitError, setSubmitError] = useState('');
+  const hp = useRef(null); // honeypot — bots fill this; humans never see it
 
   const set = (key) => (val) => {
     setForm((f) => ({ ...f, [key]: val }));
     setErrors((e) => ({ ...e, [key]: undefined }));
   };
 
-  const submit = () => {
+  const submit = async () => {
+    if (sending) return;
     const errs = {};
     if (!form.name.trim()) errs.name = 'Please add your name';
     if (!form.business.trim()) errs.business = 'Business name required';
     if (!form.email.trim()) errs.email = 'Email required';
     else if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(form.email)) errs.email = 'Enter a valid email';
     if (Object.keys(errs).length) { setErrors(errs); return; }
-    setSubmitted(true);
-    try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) { /* noop */ }
+
+    // honeypot caught a bot — pretend success, send nothing
+    if (hp.current && hp.current.value) { setSubmitted(true); return; }
+
+    setSubmitError('');
+    setSending(true);
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: ACCESS_KEY,
+          subject: `New consult request: ${form.name}, ${form.business}`,
+          from_name: 'Urban Growth Labs website',
+          replyto: form.email,
+          name: form.name,
+          business: form.business,
+          email: form.email,
+          service: form.service || 'Not specified',
+          goal: form.goal || '(none provided)',
+        }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (res.ok && data.success) {
+        setSubmitted(true);
+        try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) { /* noop */ }
+      } else {
+        setSubmitError(data.message || 'Something went wrong sending your request. Please email urban-growth@labs.syedadib.com directly.');
+      }
+    } catch (e) {
+      setSubmitError('Could not reach the server. Please check your connection, or email urban-growth@labs.syedadib.com directly.');
+    } finally {
+      setSending(false);
+    }
   };
 
-  const reset = () => { setSubmitted(false); setForm(empty); setErrors({}); };
+  const reset = () => { setSubmitted(false); setForm(empty); setErrors({}); setSubmitError(''); };
 
   if (submitted) {
     return (
@@ -54,6 +95,16 @@ export default function Contact() {
         </p>
 
         <form className="contact-form" noValidate onSubmit={(e) => { e.preventDefault(); submit(); }}>
+          {/* honeypot: hidden from people, catches bots */}
+          <input
+            ref={hp}
+            type="text"
+            name="botcheck"
+            tabIndex={-1}
+            autoComplete="off"
+            aria-hidden="true"
+            style={{ position: 'absolute', left: '-9999px', width: 1, height: 1, opacity: 0 }}
+          />
           <div className="contact-form__names">
             <Field id="f-name" label="Your name" placeholder="Jordan Rivera"
               value={form.name} onChange={set('name')} error={errors.name} />
@@ -69,7 +120,14 @@ export default function Contact() {
           <Textarea id="f-goal" label="Your goals" placeholder="What does growth look like for you?"
             value={form.goal} onChange={set('goal')} />
           <div>
-            <Button variant="signal" size="lg" type="submit">Request my consult</Button>
+            <Button variant="signal" size="lg" type="submit" disabled={sending}>
+              {sending ? 'Sending…' : 'Request my consult'}
+            </Button>
+            {submitError && (
+              <p role="alert" style={{ color: 'var(--ugl-danger)', fontSize: 14, lineHeight: 1.5, margin: '14px 0 0' }}>
+                {submitError}
+              </p>
+            )}
           </div>
         </form>
       </div>
@@ -99,7 +157,7 @@ export default function Contact() {
             </div>
           </div>
         </div>
-        <div className="expect-foot">hello@uglabs.com<br />New York, NY · Mon–Fri 9–6 ET</div>
+        <div className="expect-foot">urban-growth@labs.syedadib.com<br />New York, NY · Mon–Fri 9–6 ET</div>
       </Card>
     </section>
   );

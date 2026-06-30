@@ -32,7 +32,7 @@ export default function Footer() {
           <div>
             <div className="site-footer__heading">Get in touch</div>
             <div className="site-footer__contact">
-              <span>hello@uglabs.com</span>
+              <span>urban-growth@labs.syedadib.com</span>
               <span>New York, NY</span>
               <span>Mon–Fri · 9–6 ET</span>
             </div>

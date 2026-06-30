@@ -1147,8 +1147,8 @@ html, body { margin: 0; padding: 0; background: var(--ugl-deep-night); backgroun
 }
 
 /* ============ ANIMATED LOGO (.ugl-stage) ============
-   From the "UGL Logo Animation" handoff (v2 — sloshing/roiling liquid +
-   twinkling skyline windows). Build sequence then ambient loop. */
+   From the "UGL Logo Animation" handoff (v3 — sloshing/roiling liquid, rising
+   boil particles, twinkling skyline windows). Build sequence then ambient loop. */
 @keyframes uglGlowIn { from { opacity: 0; } to { opacity: .72; } }
 @keyframes uglGlowPulse { 0%, 100% { opacity: .5; } 50% { opacity: .9; } }
 @keyframes uglDraw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
@@ -1156,6 +1156,13 @@ html, body { margin: 0; padding: 0; background: var(--ugl-deep-night); backgroun
 @keyframes uglGrow { from { transform: scaleY(0); } to { transform: scaleY(1); } }
 @keyframes uglPop { from { transform: scale(.2); opacity: 0; } to { transform: scale(1); opacity: 1; } }
 @keyframes uglBob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+@keyframes uglBoil {
+  0% { transform: translate(0, 0) scale(.35); opacity: 0; }
+  12% { opacity: var(--bop); }
+  50% { transform: translate(calc(var(--drift) * .6), calc(var(--ry) * .5)) scale(.85); }
+  82% { opacity: calc(var(--bop) * .7); }
+  100% { transform: translate(var(--drift), var(--ry)) scale(1.1); opacity: 0; }
+}
 @keyframes uglSlosh {
   0%, 100% { transform: scale(1.04) rotate(0deg) translate(0px, 0px); }
   33% { transform: scale(1.045) rotate(-0.9deg) translate(-4px, -2px); }
@@ -1181,6 +1188,7 @@ html, body { margin: 0; padding: 0; background: var(--ugl-deep-night); backgroun
 .ugl-stage .liquid { transform-box: fill-box; transform-origin: 50% 80%; }
 .ugl-stage .bar { transform-box: fill-box; transform-origin: 50% 100%; transform: scaleY(0); }
 .ugl-stage .bubble, .ugl-stage .node, .ugl-stage .arrow { transform-box: fill-box; transform-origin: center; opacity: 0; transform: scale(.2); }
+.ugl-stage .boil { transform-box: fill-box; transform-origin: center; opacity: 0; }
 .ugl-stage .win { opacity: .9; }
 .ugl-stage .win-dim { opacity: .32; }
 .ugl-stage .win-flash-y { filter: drop-shadow(0 0 4px rgba(255,230,0,.85)); }
@@ -1207,6 +1215,7 @@ html, body { margin: 0; padding: 0; background: var(--ugl-deep-night); backgroun
   animation: uglPop calc(.5s / var(--speed)) cubic-bezier(.22,1,.36,1) calc(var(--bd) / var(--speed)) both,
              uglBob calc(4.5s / var(--speed)) ease-in-out calc(var(--bd) / var(--speed) + .6s) infinite;
 }
+.ugl-stage.play .boil { animation: uglBoil calc(var(--rdur) / var(--speed)) ease-in calc(var(--rdelay) / var(--speed)) infinite; }
 .ugl-stage.play .growthline { animation: uglDraw calc(1s / var(--speed)) cubic-bezier(.22,1,.36,1) calc(2.05s / var(--speed)) forwards; }
 .ugl-stage.play .node { animation: uglPop calc(.42s / var(--speed)) cubic-bezier(.22,1,.36,1) calc(var(--nd) / var(--speed)) forwards; }
 .ugl-stage.play .arrow {
@@ -1220,6 +1229,7 @@ html, body { margin: 0; padding: 0; background: var(--ugl-deep-night); backgroun
 /* ambient loop disabled */
 .ugl-stage.no-loop.play .glow { animation: uglGlowIn calc(.7s / var(--speed)) cubic-bezier(.22,1,.36,1) forwards; }
 .ugl-stage.no-loop.play .bubble { animation: uglPop calc(.5s / var(--speed)) cubic-bezier(.22,1,.36,1) calc(var(--bd) / var(--speed)) forwards; }
+.ugl-stage.no-loop.play .boil { animation: none; opacity: 0; }
 
 /* ---- route transition — animated logo on a deep-night cover ---- */
 .route-anim {
