@@ -351,11 +351,27 @@ html, body { margin: 0; padding: 0; background: var(--ugl-deep-night); backgroun
   gap: var(--space-4);
   min-height: 264px;
   overflow: hidden;
-  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.46), inset 0 1px 0 rgba(255, 255, 255, 0.14);
+  /* comic "inked" edge (inset dark ring) over the elevation shadow */
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.46), inset 0 0 0 2px rgba(8, 5, 16, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.14);
   transition: transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out);
 }
 /* tilt drives the hover lift now; keep a fallback for no-tilt contexts */
 .feature-card:not([data-tilt]):hover { transform: translateY(-4px); }
+/* Ben-Day halftone: printed-ink dots shading the lower-right corner */
+.feature-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background-image: radial-gradient(rgba(9, 5, 18, 0.55) 21%, transparent 22%);
+  background-size: 7px 7px;
+  -webkit-mask-image: radial-gradient(135% 120% at 118% 118%, #000 0%, rgba(0, 0, 0, 0.55) 30%, transparent 64%);
+  mask-image: radial-gradient(135% 120% at 118% 118%, #000 0%, rgba(0, 0, 0, 0.55) 30%, transparent 64%);
+  opacity: 0.7;
+  pointer-events: none;
+}
+/* keep card content above the halftone pseudo (incl. non-tilt / mobile) */
+.feature-card > * { position: relative; z-index: 1; }
 .feature-card--violet { background: var(--ugl-vivid-violet); color: var(--text-inverse); }
 .feature-card--brand  { background: var(--grad-brand);       color: #fff; }
 .feature-card--signal { background: var(--ugl-signal-yellow); color: var(--text-on-signal); }
@@ -609,7 +625,7 @@ html, body { margin: 0; padding: 0; background: var(--ugl-deep-night); backgroun
 
 /* ============ GENERIC SECTION HELPERS ============ */
 .section { max-width: 1140px; margin: 0 auto; }
-.section--band { background: var(--surface-sunken); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); }
+.section--band { position: relative; background: var(--surface-sunken); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); }
 
 .h1 { font-family: var(--font-display); font-weight: 800; color: var(--ugl-off-white); margin: 0; }
 .h2 { font-family: var(--font-display); font-weight: 800; font-size: 38px; letter-spacing: -0.02em; color: var(--ugl-off-white); margin: 0; }
@@ -655,7 +671,13 @@ html, body { margin: 0; padding: 0; background: var(--ugl-deep-night); backgroun
   font-size: clamp(56px, 12vw, 160px);
   line-height: 0.8;
   letter-spacing: 0.02em;
-  color: rgba(242, 233, 255, 0.05);
+  /* Ben-Day halftone fill: the wordmark reads as printed comic dots */
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  background-image: radial-gradient(rgba(242, 233, 255, 0.20) 30%, transparent 32%);
+  background-size: 9px 9px;
+  -webkit-background-clip: text;
+  background-clip: text;
   white-space: nowrap;
   pointer-events: none;
   user-select: none;
@@ -723,8 +745,8 @@ html, body { margin: 0; padding: 0; background: var(--ugl-deep-night); backgroun
 .case-card__media {
   height: 124px;
   border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-  background: radial-gradient(80% 130% at 70% 0%, rgba(162, 89, 255, 0.22), transparent 55%),
-              repeating-linear-gradient(45deg, rgba(162, 89, 255, 0.06) 0 10px, transparent 10px 20px);
+  background: radial-gradient(rgba(162, 89, 255, 0.30) 18%, transparent 19%) 0 0 / 8px 8px,
+              radial-gradient(80% 130% at 70% 0%, rgba(162, 89, 255, 0.22), transparent 55%);
   border-bottom: 1px solid var(--border-subtle);
   display: flex; align-items: flex-start; padding: 14px;
 }
@@ -1145,6 +1167,57 @@ html, body { margin: 0; padding: 0; background: var(--ugl-deep-night); backgroun
   opacity: 1;
   filter: drop-shadow(0 0 9px rgba(162, 89, 255, 0.45));
 }
+
+/* ============ BEN-DAY / HALFTONE (comic accents) ============
+   Static printed-dot fields layered behind content for a pop-art / comic feel.
+   Decorative only (pointer-events:none), no animation, no fixed layers — so they
+   add texture without any of the large-screen background flashing. */
+
+/* hero — faint violet halftone in opposite corners, behind the content */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(162, 89, 255, 0.22) 18%, transparent 19%);
+  background-size: 15px 15px;
+  -webkit-mask-image: radial-gradient(46% 38% at 8% 6%, #000, transparent 70%),
+                      radial-gradient(46% 38% at 94% 96%, #000, transparent 70%);
+  mask-image: radial-gradient(46% 38% at 8% 6%, #000, transparent 70%),
+              radial-gradient(46% 38% at 94% 96%, #000, transparent 70%);
+  opacity: 0.6;
+}
+
+/* section bands — whisper-faint full-bleed dot texture, fading downward */
+.section--band::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(162, 89, 255, 0.16) 16%, transparent 17%);
+  background-size: 13px 13px;
+  -webkit-mask-image: linear-gradient(180deg, #000, transparent 78%);
+  mask-image: linear-gradient(180deg, #000, transparent 78%);
+  opacity: 0.5;
+}
+.section--band > * { position: relative; z-index: 1; }
+
+/* closing CTA — halftone burst radiating from behind the headline */
+.section--sparks::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(162, 89, 255, 0.26) 17%, transparent 18%);
+  background-size: 12px 12px;
+  -webkit-mask-image: radial-gradient(62% 62% at 50% 42%, #000, transparent 72%);
+  mask-image: radial-gradient(62% 62% at 50% 42%, #000, transparent 72%);
+  opacity: 0.55;
+}
+.section--sparks > * { position: relative; z-index: 1; }
 
 /* ============ ANIMATED LOGO (.ugl-stage) ============
    From the "UGL Logo Animation" handoff (v3 — sloshing/roiling liquid, rising
